@@ -16,6 +16,8 @@
 		C8886BB928C6A366008B2D37 /* Project_19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BB828C6A366008B2D37 /* Project_19Tests.swift */; };
 		C8886BC328C6A366008B2D37 /* Project_19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BC228C6A366008B2D37 /* Project_19UITests.swift */; };
 		C8886BC528C6A366008B2D37 /* Project_19UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BC428C6A366008B2D37 /* Project_19UITestsLaunchTests.swift */; };
+		CCDBF48828CA371200C5764C /* SetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDBF48728CA371200C5764C /* SetList.swift */; };
+		CCDBF48A28CA396B00C5764C /* SetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDBF48928CA396B00C5764C /* SetListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		C8886BBE28C6A366008B2D37 /* Project_19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project_19UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8886BC228C6A366008B2D37 /* Project_19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_19UITests.swift; sourceTree = "<group>"; };
 		C8886BC428C6A366008B2D37 /* Project_19UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_19UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CCDBF48728CA371200C5764C /* SetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetList.swift; sourceTree = "<group>"; };
+		CCDBF48928CA396B00C5764C /* SetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +102,10 @@
 		C8886BA128C6A361008B2D37 /* Project_19 */ = {
 			isa = PBXGroup;
 			children = (
+				CCDBF48628CA36E600C5764C /* Models */,
 				C8886BA228C6A361008B2D37 /* AppDelegate.swift */,
 				C8886BA428C6A361008B2D37 /* ViewController.swift */,
+				CCDBF48928CA396B00C5764C /* SetListViewController.swift */,
 				C8886BA628C6A361008B2D37 /* Experience.rcproject */,
 				C8886BA828C6A361008B2D37 /* Main.storyboard */,
 				C8886BAB28C6A365008B2D37 /* Assets.xcassets */,
@@ -123,6 +129,14 @@
 				C8886BC428C6A366008B2D37 /* Project_19UITestsLaunchTests.swift */,
 			);
 			path = Project_19UITests;
+			sourceTree = "<group>";
+		};
+		CCDBF48628CA36E600C5764C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CCDBF48728CA371200C5764C /* SetList.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCDBF48828CA371200C5764C /* SetList.swift in Sources */,
+				CCDBF48A28CA396B00C5764C /* SetListViewController.swift in Sources */,
 				C8886BA528C6A361008B2D37 /* ViewController.swift in Sources */,
 				C8886BA328C6A361008B2D37 /* AppDelegate.swift in Sources */,
 				C8886BA728C6A361008B2D37 /* Experience.rcproject in Sources */,
