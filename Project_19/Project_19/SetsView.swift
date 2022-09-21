@@ -16,7 +16,7 @@ struct SetsView: View {
                 NavigationLink(destination: DetailView(set: s)) {
                     CardView(set: s)
                 }
-                // .listRowBackground(s.theme.mainColor)
+                .listRowBackground(s.theme.mainColor)
             }
         }
         .navigationTitle("My Sets")
