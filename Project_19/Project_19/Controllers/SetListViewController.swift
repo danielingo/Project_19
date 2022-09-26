@@ -32,6 +32,7 @@ class SetListViewController: UICollectionViewController {
         snapshot.appendItems(SetList.sampleData.map { $0.title })
         dataSource.apply(snapshot)
         collectionView.dataSource = dataSource
+        
     }
     private func listLayout() -> UICollectionViewCompositionalLayout {
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
