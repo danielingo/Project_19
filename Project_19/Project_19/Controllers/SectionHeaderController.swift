@@ -10,4 +10,5 @@ import UIKit
 
 class SectionHeaderController: UICollectionReusableView {
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var setImage: UIImageView!
 }

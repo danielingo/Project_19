@@ -19,7 +19,7 @@ class SetListViewController: UICollectionViewController {
         collectionView.collectionViewLayout = listLayout
         
         let cellRegistration = UICollectionView.CellRegistration { (cell: UICollectionViewListCell, indexPath: IndexPath, itemIdentifier: String) in
-            let setList = SetList.sampleData[indexPath.item]
+            let setList = Set.sampleData[indexPath.item]
             var contentConfiguration = cell.defaultContentConfiguration()
             contentConfiguration.text = setList.title
             cell.contentConfiguration = contentConfiguration
@@ -29,7 +29,7 @@ class SetListViewController: UICollectionViewController {
                 }
         var snapshot = Snapshot()
         snapshot.appendSections([0])
-        snapshot.appendItems(SetList.sampleData.map { $0.title })
+        snapshot.appendItems(Set.sampleData.map { $0.title })
         dataSource.apply(snapshot)
         collectionView.dataSource = dataSource
         

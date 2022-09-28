@@ -10,6 +10,8 @@ import RealityKit
 
 class ViewController: UIViewController {
     
+    var selectedSet: Set!
+    
     @IBOutlet var arView: ARView!
     
     override func viewDidLoad() {
