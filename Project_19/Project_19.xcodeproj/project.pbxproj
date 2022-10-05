@@ -20,6 +20,8 @@
 		C8886BB928C6A366008B2D37 /* Project_19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BB828C6A366008B2D37 /* Project_19Tests.swift */; };
 		C8886BC328C6A366008B2D37 /* Project_19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BC228C6A366008B2D37 /* Project_19UITests.swift */; };
 		C8886BC528C6A366008B2D37 /* Project_19UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BC428C6A366008B2D37 /* Project_19UITestsLaunchTests.swift */; };
+		C8A8478C28EDD999006EC86C /* env1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C8A8478B28EDD998006EC86C /* env1.usdz */; };
+		C8F8EEC028EDD36800FA12B4 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8EEBF28EDD36800FA12B4 /* ARViewController.swift */; };
 		CCDBF48A28CA396B00C5764C /* SetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDBF48928CA396B00C5764C /* SetListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		C8886BBE28C6A366008B2D37 /* Project_19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project_19UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8886BC228C6A366008B2D37 /* Project_19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_19UITests.swift; sourceTree = "<group>"; };
 		C8886BC428C6A366008B2D37 /* Project_19UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_19UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C8A8478B28EDD998006EC86C /* env1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = env1.usdz; sourceTree = "<group>"; };
+		C8F8EEBF28EDD36800FA12B4 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		CCDBF48928CA396B00C5764C /* SetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				C8886BA428C6A361008B2D37 /* ViewController.swift */,
+				C8F8EEBF28EDD36800FA12B4 /* ARViewController.swift */,
 				CCDBF48928CA396B00C5764C /* SetListViewController.swift */,
 				57BAF4E028E4CB6600D376CD /* SetListViewController2.swift */,
 				57BAF4DE28E263E300D376CD /* SectionHeaderController.swift */,
@@ -129,6 +134,7 @@
 		C8886BA128C6A361008B2D37 /* Project_19 */ = {
 			isa = PBXGroup;
 			children = (
+				C8A8478B28EDD998006EC86C /* env1.usdz */,
 				CCDBF48628CA36E600C5764C /* Models */,
 				57BAF4DD28E25F0200D376CD /* Views */,
 				57BAF4DC28E25EEB00D376CD /* Controllers */,
@@ -271,6 +277,7 @@
 				C8886BAF28C6A365008B2D37 /* LaunchScreen.storyboard in Resources */,
 				C8886BAC28C6A365008B2D37 /* Assets.xcassets in Resources */,
 				C8886BAA28C6A361008B2D37 /* Main.storyboard in Resources */,
+				C8A8478C28EDD999006EC86C /* env1.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +305,7 @@
 				57BAF4E528E4D28200D376CD /* SetTableViewCell.swift in Sources */,
 				CCDBF48A28CA396B00C5764C /* SetListViewController.swift in Sources */,
 				57BAF4E128E4CB6600D376CD /* SetListViewController2.swift in Sources */,
+				C8F8EEC028EDD36800FA12B4 /* ARViewController.swift in Sources */,
 				C8886BA528C6A361008B2D37 /* ViewController.swift in Sources */,
 				57BAF4E328E4D0AC00D376CD /* Set.swift in Sources */,
 				C8886BA328C6A361008B2D37 /* AppDelegate.swift in Sources */,
