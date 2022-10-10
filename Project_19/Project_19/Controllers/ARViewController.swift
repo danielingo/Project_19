@@ -17,15 +17,20 @@ class ARViewController: UIViewController {
         let anchor = AnchorEntity()
         anchor.position = simd_make_float3(0, -0.5, -1)
 
+        /*
         if let env1 = try? Entity.load(named: "env1") {
             anchor.addChild(env1)
         }
+         */
         if let pokemart = try? Entity.load(named: "pokemart") {
             anchor.addChild(pokemart)
+        } else {
+            print("DEBUG: pokemart not found")
         }
         
 
         arView.scene.anchors.append(anchor)
         
     }
+    
 }
