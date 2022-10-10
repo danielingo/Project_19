@@ -5,6 +5,9 @@
 //  Created by Daniel Ingo on 9/5/22.
 //
 
+
+// DON'T USE BUT IDK IF WILL BREAK IF REMOVED - Daniel
+
 import UIKit
 import RealityKit
 
@@ -18,9 +21,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
+        ///let boxAnchor = try! Experience.loadBox()
         
         // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
+        //arView.scene.anchors.append(boxAnchor)
     }
 }
