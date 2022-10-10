@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,6 +52,17 @@
                     <view key="view" contentMode="scaleToFill" id="jB3-3W-N8r">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKX-lI-jCg">
+                                <rect key="frame" x="169" y="433" width="78" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="AR View"/>
+                                <connections>
+                                    <segue destination="3PH-Gz-vrM" kind="presentation" modalPresentationStyle="fullScreen" id="X02-8h-w3l"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6aq-FM-NA8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -60,7 +70,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lPi-Z4-pQ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-299" y="197"/>
+            <point key="canvasLocation" x="-300" y="196.875"/>
+        </scene>
+        <!--ViewController-->
+        <scene sceneID="SYU-ez-0IB">
+            <objects>
+                <viewController title="ViewController" id="3PH-Gz-vrM" customClass="ARViewController" customModule="Project_19" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wjO-RE-ay0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bd1-Vw-VCr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </arView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Tsm-z1-kKR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="arView" destination="Bd1-Vw-VCr" id="bME-Fm-ZEt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cO5-0z-ZKz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857.97101449275374" y="-85.044642857142847"/>
         </scene>
         <!--Sets-->
         <scene sceneID="gd3-iZ-isF">
@@ -508,6 +542,7 @@
             </objects>
             <point key="canvasLocation" x="1409" y="-1316"/>
         </scene>
+<<<<<<< HEAD
         <!--Set List View Controller-->
         <scene sceneID="8DY-bK-ARt">
             <objects>
@@ -547,6 +582,8 @@
             </objects>
             <point key="canvasLocation" x="1261" y="-476"/>
         </scene>
+=======
+>>>>>>> e10748a8e4582536e35bd7642e01d54ab121e2c4
     </scenes>
     <resources>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
