@@ -142,7 +142,10 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Sets" id="eAi-6S-ORj"/>
+                    <navigationItem key="navigationItem" title="Sets" id="eAi-6S-ORj">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Aux-bO-Cxg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kAc-bn-dki"/>
+                    </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="896"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </tableViewController>
