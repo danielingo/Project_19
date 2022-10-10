@@ -39,7 +39,6 @@ class SetListViewController2: UITableViewController {
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
                 
-        print(dateFormatter.string(from: set.date))
         cell.setTitle.text = set.title
         cell.setDate.text = dateFormatter.string(from: set.date)
         cell.setImage = nil

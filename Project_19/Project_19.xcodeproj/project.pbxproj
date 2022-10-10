@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57BAF4DF28E263E300D376CD /* SectionHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4DE28E263E300D376CD /* SectionHeaderController.swift */; };
 		57BAF4E128E4CB6600D376CD /* SetListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4E028E4CB6600D376CD /* SetListViewController2.swift */; };
 		57BAF4E328E4D0AC00D376CD /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4E228E4D0AC00D376CD /* Set.swift */; };
 		57BAF4E528E4D28200D376CD /* SetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4E428E4D28200D376CD /* SetTableViewCell.swift */; };
@@ -43,7 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		57BAF4DE28E263E300D376CD /* SectionHeaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderController.swift; sourceTree = "<group>"; };
 		57BAF4E028E4CB6600D376CD /* SetListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetListViewController2.swift; path = Project_19/Controllers/SetListViewController2.swift; sourceTree = SOURCE_ROOT; };
 		57BAF4E228E4D0AC00D376CD /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		57BAF4E428E4D28200D376CD /* SetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableViewCell.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 				C8F8EEBF28EDD36800FA12B4 /* ARViewController.swift */,
 				CCDBF48928CA396B00C5764C /* SetListViewController.swift */,
 				57BAF4E028E4CB6600D376CD /* SetListViewController2.swift */,
-				57BAF4DE28E263E300D376CD /* SectionHeaderController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -309,7 +306,6 @@
 				C8886BA528C6A361008B2D37 /* ViewController.swift in Sources */,
 				57BAF4E328E4D0AC00D376CD /* Set.swift in Sources */,
 				C8886BA328C6A361008B2D37 /* AppDelegate.swift in Sources */,
-				57BAF4DF28E263E300D376CD /* SectionHeaderController.swift in Sources */,
 				C8886BA728C6A361008B2D37 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
