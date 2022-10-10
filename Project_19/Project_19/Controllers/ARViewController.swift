@@ -11,6 +11,7 @@ import RealityKit
 class ARViewController: UIViewController {
     @IBOutlet var arView: ARView!
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,11 +23,18 @@ class ARViewController: UIViewController {
             anchor.addChild(env1)
         }
          */
+        
+        if let env1 = try? Entity.load(named: "env1") {
+            
+        }
         if let pokemart = try? Entity.load(named: "pokemart") {
             anchor.addChild(pokemart)
         } else {
-            print("DEBUG: pokemart not found")
+            print("DEBUG: pokemart did not load")
         }
+       
+        
+        
         
 
         arView.scene.anchors.append(anchor)
