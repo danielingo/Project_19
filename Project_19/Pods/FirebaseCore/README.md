@@ -195,7 +195,11 @@ integrating Performance with the dev test App.
 ### Firebase Storage
 
 To run the Storage Integration tests, follow the instructions in
+<<<<<<< HEAD
 [StorageIntegration.swift](FirebaseStorage/Tests/Integration/StorageIntegration.swift).
+=======
+[FIRStorageIntegrationTests.m](FirebaseStorageInternal/Tests/Integration/FIRStorageIntegrationTests.m).
+>>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 
 #### Push Notifications
 

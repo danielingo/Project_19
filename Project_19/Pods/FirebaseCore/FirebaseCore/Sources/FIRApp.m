@@ -35,6 +35,10 @@
 #import "FirebaseCore/Sources/FIRFirebaseUserAgent.h"
 
 #import "FirebaseCore/Extension/FIRAppInternal.h"
+<<<<<<< HEAD
+=======
+#import "FirebaseCore/Extension/FIRCoreDiagnosticsConnector.h"
+>>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 #import "FirebaseCore/Extension/FIRHeartbeatLogger.h"
 #import "FirebaseCore/Extension/FIRLibrary.h"
 #import "FirebaseCore/Extension/FIRLogger.h"
@@ -45,6 +49,29 @@
 
 #import <objc/runtime.h>
 
+<<<<<<< HEAD
+=======
+// The kFIRService strings are only here while transitioning CoreDiagnostics from the Analytics
+// pod to a Core dependency. These symbols are not used and should be deleted after the transition.
+NSString *const kFIRServiceAdMob;
+NSString *const kFIRServiceAuth;
+NSString *const kFIRServiceAuthUI;
+NSString *const kFIRServiceCrash;
+NSString *const kFIRServiceDatabase;
+NSString *const kFIRServiceDynamicLinks;
+NSString *const kFIRServiceFirestore;
+NSString *const kFIRServiceFunctions;
+NSString *const kFIRServiceInstanceID;
+NSString *const kFIRServiceInvites;
+NSString *const kFIRServiceMessaging;
+NSString *const kFIRServiceMeasurement;
+NSString *const kFIRServicePerformance;
+NSString *const kFIRServiceRemoteConfig;
+NSString *const kFIRServiceStorage;
+NSString *const kGGLServiceAnalytics;
+NSString *const kGGLServiceSignIn;
+
+>>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 NSString *const kFIRDefaultAppName = @"__FIRAPP_DEFAULT";
 NSString *const kFIRAppReadyToConfigureSDKNotification = @"FIRAppReadyToConfigureSDKNotification";
 NSString *const kFIRAppDeleteNotification = @"FIRAppDeleteNotification";
@@ -874,8 +901,21 @@ static FIRApp *sDefaultApp;
 }
 
 - (void)appDidBecomeActive:(NSNotification *)notification {
+<<<<<<< HEAD
   if ([self isDataCollectionDefaultEnabled]) {
     [self.heartbeatLogger log];
+=======
+  [self logCoreTelemetryIfEnabled];
+}
+
+- (void)logCoreTelemetryIfEnabled {
+  if ([self isDataCollectionDefaultEnabled]) {
+    [self.heartbeatLogger log];
+    // TODO(ncooke3): Remove below code when CoreDiagnostics is removed.
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0), ^{
+      [FIRCoreDiagnosticsConnector logCoreTelemetryWithOptions:[self options]];
+    });
+>>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
   }
 }
 

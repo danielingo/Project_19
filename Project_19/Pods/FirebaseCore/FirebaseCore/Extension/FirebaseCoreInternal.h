@@ -18,7 +18,13 @@
 #import "FIRComponent.h"
 #import "FIRComponentContainer.h"
 #import "FIRComponentType.h"
+<<<<<<< HEAD
 #import "FIRDependency.h"
+=======
+#import "FIRCoreDiagnosticsConnector.h"
+#import "FIRDependency.h"
+#import "FIRHeartbeatInfo.h"
+>>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 #import "FIRHeartbeatLogger.h"
 #import "FIRLibrary.h"
 #import "FIRLogger.h"

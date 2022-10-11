@@ -14,12 +14,19 @@
 
 #import <Foundation/Foundation.h>
 
+<<<<<<< HEAD
+=======
+// TODO(ncooke3): Remove in future PR when `FIRHeartbeatInfo` symbol is removed.
+#import "FIRHeartbeatInfo.h"
+
+>>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 NS_ASSUME_NONNULL_BEGIN
 
 #ifndef FIREBASE_BUILD_CMAKE
 @class FIRHeartbeatsPayload;
 #endif  // FIREBASE_BUILD_CMAKE
 
+<<<<<<< HEAD
 /// Enum representing different daily heartbeat codes.
 /// This enum is only used by clients using platform logging V1. This is because
 /// the V1 payload only supports a single daily heartbeat.
@@ -30,6 +37,9 @@ typedef NS_ENUM(NSInteger, FIRDailyHeartbeatCode) {
   FIRDailyHeartbeatCodeSome = 2,
 };
 
+=======
+// TODO(ncooke3): Consider annotating protocol API as `@optional`. (#9568)
+>>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 @protocol FIRHeartbeatLoggerProtocol <NSObject>
 
 /// Asynchronously logs a heartbeat.
@@ -41,7 +51,11 @@ typedef NS_ENUM(NSInteger, FIRDailyHeartbeatCode) {
 #endif  // FIREBASE_BUILD_CMAKE
 
 /// Gets the heartbeat code for today.
+<<<<<<< HEAD
 - (FIRDailyHeartbeatCode)heartbeatCodeForToday;
+=======
+- (FIRHeartbeatInfoCode)heartbeatCodeForToday;
+>>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 
 @end
 
@@ -83,7 +97,11 @@ NSString *_Nullable FIRHeaderValueFromHeartbeatsPayload(FIRHeartbeatsPayload *he
 ///
 /// @note This API is thread-safe.
 /// @return Heartbeat code indicating whether or not there is an unsent global heartbeat.
+<<<<<<< HEAD
 - (FIRDailyHeartbeatCode)heartbeatCodeForToday;
+=======
+- (FIRHeartbeatInfoCode)heartbeatCodeForToday;
+>>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 
 @end
 

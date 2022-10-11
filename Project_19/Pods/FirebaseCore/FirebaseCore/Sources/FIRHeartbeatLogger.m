@@ -76,17 +76,30 @@ NSString *_Nullable FIRHeaderValueFromHeartbeatsPayload(FIRHeartbeatsPayload *he
 }
 #endif  // FIREBASE_BUILD_CMAKE
 
+<<<<<<< HEAD
 - (FIRDailyHeartbeatCode)heartbeatCodeForToday {
+=======
+- (FIRHeartbeatInfoCode)heartbeatCodeForToday {
+>>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 #ifndef FIREBASE_BUILD_CMAKE
   FIRHeartbeatsPayload *todaysHeartbeatPayload = [_heartbeatController flushHeartbeatFromToday];
 
   if ([todaysHeartbeatPayload isEmpty]) {
+<<<<<<< HEAD
     return FIRDailyHeartbeatCodeNone;
   } else {
     return FIRDailyHeartbeatCodeSome;
   }
 #else
   return FIRDailyHeartbeatCodeNone;
+=======
+    return FIRHeartbeatInfoCodeNone;
+  } else {
+    return FIRHeartbeatInfoCodeGlobal;
+  }
+#else
+  return FIRHeartbeatInfoCodeNone;
+>>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 #endif  // FIREBASE_BUILD_CMAKE
 }
 

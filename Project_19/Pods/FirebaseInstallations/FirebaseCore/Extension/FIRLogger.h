@@ -116,6 +116,7 @@ extern void FIRLogInfo(FIRLoggerService service, NSString *messageCode, NSString
 extern void FIRLogDebug(FIRLoggerService service, NSString *messageCode, NSString *message, ...)
     NS_FORMAT_FUNCTION(3, 4);
 
+<<<<<<< HEAD
 // TODO: Come up with a better logging scheme for Swift.
 /**
  * Logs a debug message to the Xcode console and the device log. If running from AppStore, will
@@ -143,10 +144,13 @@ extern void FIRLogDebugSwift(FIRLoggerService service, NSString *messageCode, NS
  */
 extern void FIRLogWarningSwift(FIRLoggerService service, NSString *messageCode, NSString *message);
 
+=======
+>>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 #ifdef __cplusplus
 }  // extern "C"
 #endif  // __cplusplus
 
+<<<<<<< HEAD
 NS_SWIFT_NAME(FirebaseLogger)
 @interface FIRLoggerWrapper : NSObject
 
@@ -161,12 +165,30 @@ NS_SWIFT_NAME(FirebaseLogger)
 ///   the service. An example of the message code is @"I-COR000001".
 ///   - message: Formatted string to be used as the log's message.
 ///   - args: Arguments list obtained from calling `va_start`, used when message is a format string.
+=======
+@interface FIRLoggerWrapper : NSObject
+
+/**
+ * Objective-C wrapper for FirebaseLogBasic to allow weak linking to FirebaseLogger
+ * (required) log level (one of the FirebaseLoggerLevel enum values).
+ * (required) service name of type FirebaseLoggerService.
+ * (required) message code starting with "I-" which means iOS, followed by a capitalized
+ *            three-character service identifier and a six digit integer message ID that is unique
+ *            within the service.
+ *            An example of the message code is @"I-COR000001".
+ * (required) message string which can be a format string.
+ * (optional) variable arguments list obtained from calling va_start, used when message is a format
+ *            string.
+ */
+
+>>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 + (void)logWithLevel:(FIRLoggerLevel)level
          withService:(FIRLoggerService)service
             withCode:(NSString *)messageCode
          withMessage:(NSString *)message
             withArgs:(va_list)args;
 
+<<<<<<< HEAD
 /// Logs a given message at a given log level.
 ///
 /// - Parameters:
@@ -183,6 +205,8 @@ NS_SWIFT_NAME(FirebaseLogger)
              message:(NSString *)message
     __attribute__((__swift_name__("log(level:service:code:message:)")));
 
+=======
+>>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 @end
 
 NS_ASSUME_NONNULL_END
