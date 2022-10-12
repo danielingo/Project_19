@@ -11,6 +11,7 @@
 		57BAF4E128E4CB6600D376CD /* SetListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4E028E4CB6600D376CD /* SetListViewController2.swift */; };
 		57BAF4E328E4D0AC00D376CD /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4E228E4D0AC00D376CD /* Set.swift */; };
 		57BAF4E528E4D28200D376CD /* SetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4E428E4D28200D376CD /* SetTableViewCell.swift */; };
+		C81583C028F6FA3800E15F79 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81583BF28F6FA3800E15F79 /* Model.swift */; };
 		C8886BA328C6A361008B2D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BA228C6A361008B2D37 /* AppDelegate.swift */; };
 		C8886BA528C6A361008B2D37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BA428C6A361008B2D37 /* ViewController.swift */; };
 		C8886BA728C6A361008B2D37 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = C8886BA628C6A361008B2D37 /* Experience.rcproject */; };
@@ -48,6 +49,7 @@
 		57BAF4E028E4CB6600D376CD /* SetListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetListViewController2.swift; path = Project_19/Controllers/SetListViewController2.swift; sourceTree = SOURCE_ROOT; };
 		57BAF4E228E4D0AC00D376CD /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		57BAF4E428E4D28200D376CD /* SetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableViewCell.swift; sourceTree = "<group>"; };
+		C81583BF28F6FA3800E15F79 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C8886B9F28C6A361008B2D37 /* Project_19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8886BA228C6A361008B2D37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8886BA428C6A361008B2D37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,8 +138,8 @@
 		C8886BA128C6A361008B2D37 /* Project_19 */ = {
 			isa = PBXGroup;
 			children = (
-				C8A8478B28EDD998006EC86C /* env1.usdz */,
 				C8C4DF3D28F474BF003393EE /* pokemart.usdz */,
+				C8A8478B28EDD998006EC86C /* env1.usdz */,
 				CCDBF48628CA36E600C5764C /* Models */,
 				57BAF4DD28E25F0200D376CD /* Views */,
 				57BAF4DC28E25EEB00D376CD /* Controllers */,
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				57BAF4E228E4D0AC00D376CD /* Set.swift */,
+				C81583BF28F6FA3800E15F79 /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				57BAF4E128E4CB6600D376CD /* SetListViewController2.swift in Sources */,
 				C8F8EEC028EDD36800FA12B4 /* ARViewController.swift in Sources */,
 				C8886BA528C6A361008B2D37 /* ViewController.swift in Sources */,
+				C81583C028F6FA3800E15F79 /* Model.swift in Sources */,
 				57BAF4E328E4D0AC00D376CD /* Set.swift in Sources */,
 				C8886BA328C6A361008B2D37 /* AppDelegate.swift in Sources */,
 				57BAF4DF28E263E300D376CD /* SectionHeaderController.swift in Sources */,
