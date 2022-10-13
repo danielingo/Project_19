@@ -19,6 +19,8 @@
 		C8886BB928C6A366008B2D37 /* Project_19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BB828C6A366008B2D37 /* Project_19Tests.swift */; };
 		C8886BC328C6A366008B2D37 /* Project_19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BC228C6A366008B2D37 /* Project_19UITests.swift */; };
 		C8886BC528C6A366008B2D37 /* Project_19UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BC428C6A366008B2D37 /* Project_19UITestsLaunchTests.swift */; };
+		CCCB89AD28F8CA23009276BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCCB89AC28F8CA23009276BD /* GoogleService-Info.plist */; };
+		CCCB89AF28F8CD34009276BD /* NewSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB89AE28F8CD34009276BD /* NewSetViewController.swift */; };
 		CCDBF48A28CA396B00C5764C /* SetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDBF48928CA396B00C5764C /* SetListViewController.swift */; };
 		EDD10575B688FBA805F53602 /* Pods_Project_19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CC9D29B7126E6E8CD4BDF5 /* Pods_Project_19.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		C8886BBE28C6A366008B2D37 /* Project_19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project_19UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8886BC228C6A366008B2D37 /* Project_19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_19UITests.swift; sourceTree = "<group>"; };
 		C8886BC428C6A366008B2D37 /* Project_19UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_19UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CCCB89AC28F8CA23009276BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		CCCB89AE28F8CD34009276BD /* NewSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSetViewController.swift; sourceTree = "<group>"; };
 		CCDBF48928CA396B00C5764C /* SetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +98,6 @@
 				5BEFBA4BDF20FF841433969D /* Pods-Project_19.debug.xcconfig */,
 				08EA9A4727358B40A7A767B3 /* Pods-Project_19.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -104,6 +107,7 @@
 				C8886BA428C6A361008B2D37 /* ViewController.swift */,
 				CCDBF48928CA396B00C5764C /* SetListViewController.swift */,
 				57BAF4E028E4CB6600D376CD /* SetListViewController2.swift */,
+				CCCB89AE28F8CD34009276BD /* NewSetViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,6 +155,7 @@
 		C8886BA128C6A361008B2D37 /* Project_19 */ = {
 			isa = PBXGroup;
 			children = (
+				CCCB89AC28F8CA23009276BD /* GoogleService-Info.plist */,
 				CCDBF48628CA36E600C5764C /* Models */,
 				57BAF4DD28E25F0200D376CD /* Views */,
 				57BAF4DC28E25EEB00D376CD /* Controllers */,
@@ -293,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8886BAF28C6A365008B2D37 /* LaunchScreen.storyboard in Resources */,
+				CCCB89AD28F8CA23009276BD /* GoogleService-Info.plist in Resources */,
 				C8886BAC28C6A365008B2D37 /* Assets.xcassets in Resources */,
 				C8886BAA28C6A361008B2D37 /* Main.storyboard in Resources */,
 			);
@@ -363,6 +369,7 @@
 			files = (
 				57BAF4E528E4D28200D376CD /* SetTableViewCell.swift in Sources */,
 				CCDBF48A28CA396B00C5764C /* SetListViewController.swift in Sources */,
+				CCCB89AF28F8CD34009276BD /* NewSetViewController.swift in Sources */,
 				57BAF4E128E4CB6600D376CD /* SetListViewController2.swift in Sources */,
 				C8886BA528C6A361008B2D37 /* ViewController.swift in Sources */,
 				57BAF4E328E4D0AC00D376CD /* Set.swift in Sources */,

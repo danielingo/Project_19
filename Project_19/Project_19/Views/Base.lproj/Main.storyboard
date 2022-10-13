@@ -123,7 +123,7 @@
         <scene sceneID="oyP-kK-QF4">
             <objects>
                 <tableViewController id="aXF-S7-WCV" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="8yZ-2e-3PB">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="8yZ-2e-3PB" customClass="NewSetViewController" customModule="Project_19" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -183,11 +183,16 @@
                         <connections>
                             <outlet property="dataSource" destination="aXF-S7-WCV" id="dXs-V4-Sfw"/>
                             <outlet property="delegate" destination="aXF-S7-WCV" id="FfT-O3-8LS"/>
+                            <outlet property="nameTextField" destination="1bC-y7-o0q" id="VaT-cg-aXD"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Create New Set" id="oSp-nO-juJ">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Fjh-mp-L25"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="7Qg-lS-vzn"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="7Qg-lS-vzn">
+                            <connections>
+                                <action selector="DoneButtonClicked:" destination="rJj-qv-OnV" id="92m-5E-jds"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJj-qv-OnV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
