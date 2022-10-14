@@ -187,7 +187,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Create New Set" id="oSp-nO-juJ">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Fjh-mp-L25"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Fjh-mp-L25">
+                            <connections>
+                                <action selector="goBack" destination="rJj-qv-OnV" id="tcc-nf-unY"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="7Qg-lS-vzn">
                             <connections>
                                 <action selector="DoneButtonClicked:" destination="rJj-qv-OnV" id="92m-5E-jds"/>
