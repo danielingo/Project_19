@@ -32,10 +32,21 @@ class ARViewController: UIViewController {
         return availableModels
     }()
 
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //let scrollView = UIScrollView(frame: CGRect(x: 100, y: 100, width: 100, height: 500))
+        //self.view.addSubview(scrollView)
+
+        for i in 0..<3 {
+            let button = UIButton(frame: CGRect(x: 100, y: 100+(100*i), width: 100, height: 50))
+              button.backgroundColor = .green
+              button.setTitle("Button\(i)", for: .normal)
+              button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+              self.view.addSubview(button)
+        }
         
+       
         
 
         
@@ -63,9 +74,15 @@ class ARViewController: UIViewController {
                 print("Model no load")
             }
         }
+    
+        
+        
        
         //arView.scene.anchors.append(anchor)
         
+    }
+    @objc func buttonAction(sender: UIButton!) {
+        print("\(sender.titleLabel) tapped")
     }
     
 }
