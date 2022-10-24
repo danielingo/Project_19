@@ -15,6 +15,7 @@ class ARViewController: UIViewController {
     private var modelConfirmedForPlacement: Model?
 
     private var models: [Model] =  {
+        /*
         let filemanager = FileManager.default
 
         guard let path = Bundle.main.resourcePath, let
@@ -30,6 +31,15 @@ class ARViewController: UIViewController {
             availableModels.append(model)
         }
         return availableModels
+         */
+        var availableModels: [Model] = []
+        
+        let model = Model(modelName: "env1")
+        model.modelEntity = file
+        availableModels.append(model)
+        
+        return availableModels
+
     }()
 
     
@@ -50,14 +60,24 @@ class ARViewController: UIViewController {
         
 
         
-       // let anchor = AnchorEntity()
-       // anchor.position = simd_make_float3(0, -0.5, -1)
+        let anchor = AnchorEntity()
+        anchor.position = simd_make_float3(0, -0.5, -1)
+        
+        if models[0].modelEntity != nil {
+            print(models[0].modelEntity!)
+
+        } else {
+            print("model size: \(models.count)")
+        }
+        //anchor.addChild(models[0].modelEntity!)
 
         /*
         if let env1 = try? Entity.load(named: "env1") {
             anchor.addChild(env1)
         }
          */
+        
+        /*
         modelConfirmedForPlacement = models[0]
         
         if let model = self.modelConfirmedForPlacement {
@@ -74,6 +94,7 @@ class ARViewController: UIViewController {
                 print("Model no load")
             }
         }
+         */
     
         
         
@@ -82,7 +103,7 @@ class ARViewController: UIViewController {
         
     }
     @objc func buttonAction(sender: UIButton!) {
-        print("\(sender.titleLabel) tapped")
+        print("\(sender.titleLabel!) tapped")
     }
     
 }
