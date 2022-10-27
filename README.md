@@ -19,7 +19,7 @@
 ### Bug Fixes: 
   * Fixed the set list view as it wasn’t working as planned in sprint 1
   * We were unable to integrate the storyboard features with the ARView
-## Version0.1.0
+## Version 0.1.0
 ### New Feature
   * User will have access to their customized set lists 
 ### Bug Fixes
