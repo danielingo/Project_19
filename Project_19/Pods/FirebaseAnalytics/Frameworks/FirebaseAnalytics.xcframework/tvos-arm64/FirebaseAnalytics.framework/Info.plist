@@ -13,11 +13,7 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleVersion</key>
-<<<<<<< HEAD
-	<string>10.0.0</string>
-=======
 	<string>9.6.0</string>
->>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 	<key>DTSDKName</key>
 	<string>iphonesimulator11.2</string>
 </dict>

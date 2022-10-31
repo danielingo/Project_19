@@ -6,82 +6,43 @@
 	<array>
 		<dict>
 			<key>LibraryIdentifier</key>
-<<<<<<< HEAD
-			<string>ios-arm64_x86_64-maccatalyst</string>
-=======
 			<string>ios-arm64_i386_x86_64-simulator</string>
->>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 			<key>LibraryPath</key>
 			<string>FirebaseAnalytics.framework</string>
 			<key>SupportedArchitectures</key>
 			<array>
 				<string>arm64</string>
-<<<<<<< HEAD
-=======
 				<string>i386</string>
->>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 				<string>x86_64</string>
 			</array>
 			<key>SupportedPlatform</key>
 			<string>ios</string>
 			<key>SupportedPlatformVariant</key>
-<<<<<<< HEAD
-			<string>maccatalyst</string>
-		</dict>
-		<dict>
-			<key>LibraryIdentifier</key>
-			<string>ios-arm64_i386_x86_64-simulator</string>
-=======
 			<string>simulator</string>
 		</dict>
 		<dict>
 			<key>LibraryIdentifier</key>
 			<string>tvos-arm64_x86_64-simulator</string>
->>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 			<key>LibraryPath</key>
 			<string>FirebaseAnalytics.framework</string>
 			<key>SupportedArchitectures</key>
 			<array>
 				<string>arm64</string>
-<<<<<<< HEAD
-				<string>i386</string>
-				<string>x86_64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>ios</string>
-=======
 				<string>x86_64</string>
 			</array>
 			<key>SupportedPlatform</key>
 			<string>tvos</string>
->>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 			<key>SupportedPlatformVariant</key>
 			<string>simulator</string>
 		</dict>
 		<dict>
 			<key>LibraryIdentifier</key>
-<<<<<<< HEAD
-			<string>tvos-arm64_x86_64-simulator</string>
-=======
 			<string>tvos-arm64</string>
->>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 			<key>LibraryPath</key>
 			<string>FirebaseAnalytics.framework</string>
 			<key>SupportedArchitectures</key>
 			<array>
 				<string>arm64</string>
-<<<<<<< HEAD
-				<string>x86_64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>tvos</string>
-			<key>SupportedPlatformVariant</key>
-			<string>simulator</string>
-		</dict>
-		<dict>
-			<key>LibraryIdentifier</key>
-			<string>macos-arm64_x86_64</string>
-=======
 			</array>
 			<key>SupportedPlatform</key>
 			<string>tvos</string>
@@ -89,22 +50,11 @@
 		<dict>
 			<key>LibraryIdentifier</key>
 			<string>ios-arm64_armv7</string>
->>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 			<key>LibraryPath</key>
 			<string>FirebaseAnalytics.framework</string>
 			<key>SupportedArchitectures</key>
 			<array>
 				<string>arm64</string>
-<<<<<<< HEAD
-				<string>x86_64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>macos</string>
-		</dict>
-		<dict>
-			<key>LibraryIdentifier</key>
-			<string>tvos-arm64</string>
-=======
 				<string>armv7</string>
 			</array>
 			<key>SupportedPlatform</key>
@@ -113,21 +63,11 @@
 		<dict>
 			<key>LibraryIdentifier</key>
 			<string>macos-arm64_x86_64</string>
->>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 			<key>LibraryPath</key>
 			<string>FirebaseAnalytics.framework</string>
 			<key>SupportedArchitectures</key>
 			<array>
 				<string>arm64</string>
-<<<<<<< HEAD
-			</array>
-			<key>SupportedPlatform</key>
-			<string>tvos</string>
-		</dict>
-		<dict>
-			<key>LibraryIdentifier</key>
-			<string>ios-arm64_armv7</string>
-=======
 				<string>x86_64</string>
 			</array>
 			<key>SupportedPlatform</key>
@@ -136,25 +76,17 @@
 		<dict>
 			<key>LibraryIdentifier</key>
 			<string>ios-arm64_x86_64-maccatalyst</string>
->>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 			<key>LibraryPath</key>
 			<string>FirebaseAnalytics.framework</string>
 			<key>SupportedArchitectures</key>
 			<array>
 				<string>arm64</string>
-<<<<<<< HEAD
-				<string>armv7</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>ios</string>
-=======
 				<string>x86_64</string>
 			</array>
 			<key>SupportedPlatform</key>
 			<string>ios</string>
 			<key>SupportedPlatformVariant</key>
 			<string>maccatalyst</string>
->>>>>>> aa2251f... pushing Firebase Cocoapods support, Natasha + Linsey
 		</dict>
 	</array>
 	<key>CFBundlePackageType</key>
