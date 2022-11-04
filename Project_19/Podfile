@@ -8,6 +8,8 @@ target 'Project_19' do
   # Pods for Project_19
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Firestore'
+pod 'Firebase/Storage'
 pod 'GoogleSignIn'
 
   target 'Project_19Tests' do

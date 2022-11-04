@@ -35,7 +35,7 @@ class ARViewController: UIViewController {
         var availableModels: [Model] = []
         
         let model = Model(modelName: "env1")
-        model.modelEntity = file
+       // model.modelEntity = file
         availableModels.append(model)
         
         return availableModels
@@ -48,10 +48,13 @@ class ARViewController: UIViewController {
         //let scrollView = UIScrollView(frame: CGRect(x: 100, y: 100, width: 100, height: 500))
         //self.view.addSubview(scrollView)
 
-        for i in 0..<3 {
-            let button = UIButton(frame: CGRect(x: 100, y: 100+(100*i), width: 100, height: 50))
+        
+
+        for i in 0..<2 {
+            let button = UIButton(frame: CGRect(x: 10, y: 50+(100*i), width: 100, height: 50))
               button.backgroundColor = .green
               button.setTitle("Button\(i)", for: .normal)
+              button.setImage(UIImage(named: "image\(i+1)"), for: .normal)
               button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
               self.view.addSubview(button)
         }
@@ -60,8 +63,8 @@ class ARViewController: UIViewController {
         
 
         
-        let anchor = AnchorEntity()
-        anchor.position = simd_make_float3(0, -0.5, -1)
+        //let anchor = AnchorEntity()
+        //anchor.position = simd_make_float3(0, -0.5, -1)
         
         if models[0].modelEntity != nil {
             print(models[0].modelEntity!)
@@ -76,6 +79,7 @@ class ARViewController: UIViewController {
             anchor.addChild(env1)
         }
          */
+         
         
         /*
         modelConfirmedForPlacement = models[0]
@@ -102,8 +106,28 @@ class ARViewController: UIViewController {
         //arView.scene.anchors.append(anchor)
         
     }
+    
+    var count = 0
     @objc func buttonAction(sender: UIButton!) {
+        let anchor = AnchorEntity()
+        anchor.position = simd_make_float3(0, -0.5, -1)
+        
+        if (count == 0) {
+            if let pokemart = try? Entity.load(named: "pokemart") {
+                anchor.addChild(pokemart)
+            }
+        }
+        if (count == 1) {
+            count = 0
+            if let env1 = try? Entity.load(named: "env1") {
+                anchor.addChild(env1)
+            }
+            
+        }
         print("\(sender.titleLabel!) tapped")
+        count = count + 1
+        arView.scene.anchors.append(anchor)
+        
     }
     
 }
