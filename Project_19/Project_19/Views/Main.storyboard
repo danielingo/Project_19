@@ -88,6 +88,7 @@
                         <viewLayoutGuide key="safeArea" id="Tsm-z1-kKR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ikf-3h-meF"/>
                     <connections>
                         <outlet property="arView" destination="Bd1-Vw-VCr" id="bME-Fm-ZEt"/>
                     </connections>
@@ -158,8 +159,8 @@
         <!--Create Set-->
         <scene sceneID="Yqr-Ce-meK">
             <objects>
-                <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="F6c-Ug-Qpf" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="UCl-Ed-83m" customClass="NewSetViewController" customModule="Project_19" customModuleProvider="target">
+                <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="F6c-Ug-Qpf" customClass="AddSetViewController" customModule="Project_19" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="UCl-Ed-83m">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -201,8 +202,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vp6-yT-TMv">
-                                                    <rect key="frame" x="309.66666666666663" y="16" width="3.6666666666666665" height="14.333333333333334"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text=" TagDetail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vp6-yT-TMv">
+                                                    <rect key="frame" x="257" y="16" width="56.333333333333336" height="14.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -220,24 +221,28 @@
                         <connections>
                             <outlet property="dataSource" destination="F6c-Ug-Qpf" id="BBz-98-LKD"/>
                             <outlet property="delegate" destination="F6c-Ug-Qpf" id="JLN-VO-BUy"/>
-                            <outlet property="nameTextField" destination="VE4-yk-NpL" id="eWL-y1-Le4"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Create Set" id="p0x-G4-Sqx">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ebc-dx-cOG">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="lrq-h0-dCH">
                             <connections>
-                                <action selector="goBack" destination="kOu-cx-2Ff" id="V25-AZ-9Bu"/>
+                                <segue destination="jK7-jE-EMi" kind="unwind" unwindAction="cancelToParentView:" id="YBc-qA-OKK"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="fSb-4H-iYr">
                             <connections>
-                                <action selector="DoneButtonClicked:" destination="kOu-cx-2Ff" id="0La-1N-cd4"/>
+                                <segue destination="jK7-jE-EMi" kind="unwind" unwindAction="doneToARView:" id="0H4-42-tYf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="VE4-yk-NpL" id="vT5-rm-8EY"/>
+                        <outlet property="tagLabel" destination="Vp6-yT-TMv" id="V6Z-wa-oSi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOu-cx-2Ff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="jK7-jE-EMi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2571" y="-968"/>
         </scene>
@@ -548,7 +553,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="F6c-Ug-Qpf" kind="relationship" relationship="rootViewController" id="t7C-3w-WRr"/>
+                        <segue destination="F6c-Ug-Qpf" kind="relationship" relationship="rootViewController" id="8gV-tC-HxJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Lw-z0-taJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
