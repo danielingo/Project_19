@@ -212,7 +212,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="gWb-cT-60n" kind="show" id="0aR-Lm-pba"/>
+                                            <segue destination="gWb-cT-60n" kind="show" identifier="PickTag" id="0aR-Lm-pba"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -272,9 +272,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="TagCell"/>
-                                <connections>
-                                    <segue destination="2c9-qn-E2z" kind="unwind" unwindAction="unwindWithSelectedTagWithSegue:" id="7Bi-1U-a4Q"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -284,6 +281,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="BKd-A9-Vfw"/>
+                    <connections>
+                        <segue destination="2c9-qn-E2z" kind="unwind" identifier="unwindTagSelect" unwindAction="unwindWithSelectedTagWithSegue:" id="fe3-mH-5vH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7S-NC-lzk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="2c9-qn-E2z" userLabel="Exit" sceneMemberID="exit"/>
