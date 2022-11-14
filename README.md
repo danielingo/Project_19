@@ -1,5 +1,16 @@
 # Project_19
 # JD 2200: Lidar scan that allows you to view and test out different objects in various lidar view scenes.
+## Version 0.4.0
+### Features:
+  * User can access and search through a list of props in the set environment
+  * User can place objects from Prop Library and Sets from the Set Library into an open scene 
+  * User can add a set to the set list that is linked to Firebase 
+  * User can organize sets using tag selection 
+### Bug Fixes:
+  * User was not able to cancel when creating a new set
+  * User was not able to confirm set creation via the done button
+  * User was not able to select proper tag for list to organize sets
+  * User could not see updated tags when tags were selected
 ## Version 0.3.0
 ### Features: 
   * User can select props in the augmented reality view
