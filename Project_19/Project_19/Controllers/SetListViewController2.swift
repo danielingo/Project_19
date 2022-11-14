@@ -45,4 +45,15 @@ class SetListViewController2: UITableViewController {
         
         return cell
     }
+    
+}
+
+extension SetListViewController2 {
+    @IBAction func cancelToParentView(_ segue: UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func doneToARView(_ segue: UIStoryboardSegue) {
+        
+    }
 }

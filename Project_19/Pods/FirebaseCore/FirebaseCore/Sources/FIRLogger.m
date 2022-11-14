@@ -171,11 +171,4 @@ FIR_LOGGING_FUNCTION(Debug)
   FIRLogBasic(level, service, messageCode, message, args);
 }
 
-+ (void)logWithLevel:(FIRLoggerLevel)level
-             service:(FIRLoggerService)service
-                code:(NSString *)code
-             message:(NSString *)message {
-  FIRLogBasic(level, service, code, message, NULL);
-}
-
 @end
