@@ -47,3 +47,13 @@ class SetListViewController2: UITableViewController {
     }
     
 }
+
+extension SetListViewController2 {
+    @IBAction func cancelToParentView(_ segue: UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func doneToARView(_ segue: UIStoryboardSegue) {
+        
+    }
+}
