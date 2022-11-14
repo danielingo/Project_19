@@ -9,7 +9,7 @@ target 'Project_19' do
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
-pod 'Firebase/Storage' 
+pod 'Firebase/Storage'
 pod 'GoogleSignIn'
 
   target 'Project_19Tests' do
