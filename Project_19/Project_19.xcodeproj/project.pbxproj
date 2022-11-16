@@ -21,7 +21,10 @@
 		C8886BC328C6A366008B2D37 /* Project_19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BC228C6A366008B2D37 /* Project_19UITests.swift */; };
 		C8886BC528C6A366008B2D37 /* Project_19UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BC428C6A366008B2D37 /* Project_19UITestsLaunchTests.swift */; };
 		C8A8478C28EDD999006EC86C /* env1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C8A8478B28EDD998006EC86C /* env1.usdz */; };
+		C8B9C3A02925357100D585CD /* Pokemon_-_Magikarp.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C8B9C39F2925357100D585CD /* Pokemon_-_Magikarp.usdz */; };
+		C8B9C3A22925806700D585CD /* Pokemon_Jigglypuff.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C8B9C3A12925806700D585CD /* Pokemon_Jigglypuff.usdz */; };
 		C8C4DF3E28F474C0003393EE /* pokemart.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C8C4DF3D28F474BF003393EE /* pokemart.usdz */; };
+		C8C8FBF229241227001F8996 /* Samba_Dancing_Pikachu.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C8C8FBF129241227001F8996 /* Samba_Dancing_Pikachu.usdz */; };
 		C8F8EEC028EDD36800FA12B4 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8EEBF28EDD36800FA12B4 /* ARViewController.swift */; };
 		CCDBF48A28CA396B00C5764C /* SetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDBF48928CA396B00C5764C /* SetListViewController.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +64,10 @@
 		C8886BC228C6A366008B2D37 /* Project_19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_19UITests.swift; sourceTree = "<group>"; };
 		C8886BC428C6A366008B2D37 /* Project_19UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_19UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C8A8478B28EDD998006EC86C /* env1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = env1.usdz; sourceTree = "<group>"; };
+		C8B9C39F2925357100D585CD /* Pokemon_-_Magikarp.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Pokemon_-_Magikarp.usdz"; sourceTree = "<group>"; };
+		C8B9C3A12925806700D585CD /* Pokemon_Jigglypuff.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Pokemon_Jigglypuff.usdz; sourceTree = "<group>"; };
 		C8C4DF3D28F474BF003393EE /* pokemart.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pokemart.usdz; sourceTree = "<group>"; };
+		C8C8FBF129241227001F8996 /* Samba_Dancing_Pikachu.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Samba_Dancing_Pikachu.usdz; sourceTree = "<group>"; };
 		C8F8EEBF28EDD36800FA12B4 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		CCDBF48928CA396B00C5764C /* SetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +143,9 @@
 			children = (
 				C8C4DF3D28F474BF003393EE /* pokemart.usdz */,
 				C8A8478B28EDD998006EC86C /* env1.usdz */,
+				C8C8FBF129241227001F8996 /* Samba_Dancing_Pikachu.usdz */,
+				C8B9C39F2925357100D585CD /* Pokemon_-_Magikarp.usdz */,
+				C8B9C3A12925806700D585CD /* Pokemon_Jigglypuff.usdz */,
 				CCDBF48628CA36E600C5764C /* Models */,
 				57BAF4DD28E25F0200D376CD /* Views */,
 				57BAF4DC28E25EEB00D376CD /* Controllers */,
@@ -279,8 +288,11 @@
 			files = (
 				C8886BAF28C6A365008B2D37 /* LaunchScreen.storyboard in Resources */,
 				C8886BAC28C6A365008B2D37 /* Assets.xcassets in Resources */,
+				C8B9C3A22925806700D585CD /* Pokemon_Jigglypuff.usdz in Resources */,
 				C8886BAA28C6A361008B2D37 /* Main.storyboard in Resources */,
+				C8C8FBF229241227001F8996 /* Samba_Dancing_Pikachu.usdz in Resources */,
 				C8A8478C28EDD999006EC86C /* env1.usdz in Resources */,
+				C8B9C3A02925357100D585CD /* Pokemon_-_Magikarp.usdz in Resources */,
 				C8C4DF3E28F474C0003393EE /* pokemart.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

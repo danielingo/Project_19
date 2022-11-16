@@ -6,15 +6,15 @@
 //
 
 import UIKit
+import ARKit
 import RealityKit
 
 class ARViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var arView: ARView!
 
-    //update to model obj
-    private var modelConfirmedForPlacement: Model?
-
-    private var models: [Model] =  {
+    // this guy automatically adds the filename of usdz models to the "models" array
+    // this is just an array of model names not the actual model entities
+    private var models: [String] =  {
         let filemanager = FileManager.default
 
         guard let path = Bundle.main.resourcePath, let
@@ -22,86 +22,143 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
             filemanager.contentsOfDirectory(atPath: path) else {
             return []
         }
-        var availableModels: [Model] = []
+        var availableModels: [String] = []
         for filename in files where filename.hasSuffix("usdz") {
             let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
-            let model = Model(modelName: modelName)
+            //let model = Model(modelName: modelName)
             print("appending \(modelName)")
-            availableModels.append(model)
+            availableModels.append(modelName)
         }
         return availableModels
     }()
 
+    
+    private var modelConfirmedForPlacement: String?
+    private var prevSender: UIButton!
     var scrollview = UIScrollView()
+    var scrollviewContainer = UIView()
     var imageview = UIImageView()
     var view1 = UIView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let scrollView = UIScrollView(frame: CGRect(x: 100, y: 100, width: 100, height: 500))
-        //self.view.addSubview(scrollView)
-        let modelNames = ["env1", "pokemart"]
+     
+        // this is probably an unnecessary line but I feel insecure w/out it
+        let modelNames = models
 
-       
-//        for i in 0..<modelNames.count {
-//            let button = UIButton(frame: CGRect(x: 100, y: 100+(100*i), width: 100, height: 50))
-//              button.backgroundColor = .green
-//              button.setTitle(modelNames[i], for: .normal)
-//              button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-//              scrollview.addSubview(button)
-//        }
-//        self.view.addSubview(scrollview)
-//
-
-        imageview.frame = CGRect(x: 0, y: 0, width: view.frame.size.width , height: 1000)
-        imageview.image = UIImage(named: "image")
+        startPlaneDetection()
+        // this is what allows for tapping
+        arView.addGestureRecognizer(UITapGestureRecognizer(
+            target: self, action: #selector(handleTap(recognizer:))))
+        
+        
+        
+        
+       // scroll view mumjo jumbo
         scrollview.delegate = self
-        scrollview.contentSize = CGSize(width: imageview.frame.width, height: imageview.frame.height)
-
-        //scrollview.backgroundColor = UIColor.red
-        imageview.backgroundColor =  UIColor.green
-
+        scrollviewContainer.frame = CGRect(x: 0, y: 720, width: view.frame.size.width , height: 50)
+        scrollview.contentSize = CGSize(width: 1000, height:50)
+        scrollviewContainer.backgroundColor = UIColor(white: 1, alpha: 0.1)
+        
+        
+        // programmatically add button to the scroll view
+        // each button has it's name set to the a model's name from the modelNames[] array
         for i in 0..<modelNames.count {
-            let button = UIButton(frame: CGRect(x: 10, y: 50+(50*i), width: 50, height: 30))
-            button.backgroundColor = .green
+            let button = UIButton(frame: CGRect(x: 10+(70*i), y: 720 , width: 50, height: 50))
+            button.backgroundColor = .gray
             button.setTitle(modelNames[i], for: .normal)
             button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             self.scrollview.addSubview(button)
             }
-        //self.scrollview.addSubview(imageview)
+        scrollviewContainer.addSubview(scrollview)
+        view.addSubview(scrollviewContainer)
         
-        view.addSubview(scrollview)
+        // do I know what any of this does?? lmao
         scrollview.translatesAutoresizingMaskIntoConstraints = false
-
-
-
         scrollview.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         scrollview.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         scrollview.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         scrollview.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-
         
 
-        /*
-        if let env1 = try? Entity.load(named: "env1") {
-            anchor.addChild(env1)
-        }
-         */
-        
 
+    }
+    
+    
+    func startPlaneDetection() {
+        // this line works if run on real iPhone not simulator
+        arView.automaticallyConfigureSession = true
+        
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = [.horizontal]
+        arView.session.run(configuration)
         
     }
+    
+    // guess what this func handles...
+    @objc
+    func handleTap(recognizer: UITapGestureRecognizer) {
+        let tapLocation = recognizer.location(in: arView)
+        
+        // \(^>^)/ raaaaaays
+        let results = arView.raycast(
+            from: tapLocation, allowing: .estimatedPlane,
+            alignment: .horizontal)
+        
+        if let firstResult = results.first {
+            let worldPos = simd_make_float3(
+                firstResult.worldTransform.columns.3)
+                    
+            // unwrapping so doesn't place NULL if button not selected
+            if let modelName = modelConfirmedForPlacement {
+                placeObject(modelName: modelName, at: worldPos)
+            } else {
+                print("DEBUG: Tap handled.. modelConfirmedForPlacement NULL ")
+            }
+           // print("DEBUG: Tap handled.. no function yet")
+        }
+    }
+    
+    func placeObject(modelName: String, at location:SIMD3<Float>) {
+        let objectAnchor = AnchorEntity(world: location)
+        
+        let model = try! Entity.loadModel(named: modelName, in: nil)
+        
+        objectAnchor.addChild(model)
+        
+        arView.scene.addAnchor(objectAnchor)
+    }
+    
+    func createModel() -> ModelEntity {
+        let sphere = MeshResource.generateSphere(radius: 0.1)
+        let sphereMaterial = SimpleMaterial(color: .red, roughness: 0, isMetallic: true)
+        let sphereEntity = ModelEntity(mesh: sphere, materials: [sphereMaterial])
+        return sphereEntity
+    }
+    
+    var beenPressed = false
     @objc func buttonAction(sender: UIButton!) {
-        let anchor = AnchorEntity()
-        anchor.position = simd_make_float3(0, -0.5, -1)
-        
-        let modelName = sender.currentTitle!
-        
-        if let model = try? Entity.load(named: modelName) {
-            anchor.addChild(model)
+        //let anchor = AnchorEntity()
+        //anchor.position = simd_make_float3(0, -0.5, -1)
+        if prevSender == sender {
+            beenPressed = true
+        } else {
+            prevSender = sender
+            beenPressed = false
         }
         
-        
-        arView.scene.anchors.append(anchor)
+        if beenPressed {
+            sender.backgroundColor = .gray
+            modelConfirmedForPlacement = nil
+            beenPressed = false
+        } else {
+            let modelName = sender.currentTitle!
+            modelConfirmedForPlacement = modelName
+
+            sender.backgroundColor = UIColor(white: 1, alpha: 0.3)
+            
+        }
+
+
         print("\(String(describing: sender.currentTitle)) tapped")
     }
     
