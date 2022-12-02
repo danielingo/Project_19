@@ -8,12 +8,14 @@
 import UIKit
 import ARKit
 import RealityKit
+import SwiftUI
 
 class ARViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var arView: ARView!
 
     // this guy automatically adds the filename of usdz models to the "models" array
     // this is just an array of model names not the actual model entities
+    // Yo Linsey this be where firebase search might want to live
     private var models: [String] =  {
         let filemanager = FileManager.default
 
@@ -34,11 +36,14 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
 
     
     private var modelConfirmedForPlacement: String?
-    private var prevSender: UIButton!
     var scrollview = UIScrollView()
     var scrollviewContainer = UIView()
     var imageview = UIImageView()
     var view1 = UIView()
+    let buttonColor = UIColor(white: 0.5, alpha: 0.9)
+    @ObservedObject var thumbnailGenerator = ThumbnailGenerator()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
      
@@ -50,8 +55,8 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
         arView.addGestureRecognizer(UITapGestureRecognizer(
             target: self, action: #selector(handleTap(recognizer:))))
         
-        
-        
+        // change background
+        //arView.environment.background = .color(.systemGray)
         
        // scroll view mumjo jumbo
         scrollview.delegate = self
@@ -63,10 +68,15 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
         // programmatically add button to the scroll view
         // each button has it's name set to the a model's name from the modelNames[] array
         for i in 0..<modelNames.count {
-            let button = UIButton(frame: CGRect(x: 10+(70*i), y: 720 , width: 50, height: 50))
-            button.backgroundColor = .gray
+            let button = UIButton(frame: CGRect(x: 10+(90*i), y: 720 , width: 75, height: 75))
+            button.backgroundColor = buttonColor
             button.setTitle(modelNames[i], for: .normal)
+            button.setTitleColor(UIColor.clear, for: .normal)
             button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            
+            self.thumbnailGenerator.generateThumbnail(for:modelNames[i], withExtension: "usdz", size: CGSize(width: 75, height: 75), button: button)
+            
+            button.layer.cornerRadius = 5
             self.scrollview.addSubview(button)
             }
         scrollviewContainer.addSubview(scrollview)
@@ -78,8 +88,6 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
         scrollview.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         scrollview.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         scrollview.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
-
 
     }
     
@@ -126,40 +134,57 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
         objectAnchor.addChild(model)
         
         arView.scene.addAnchor(objectAnchor)
+        
+        model.generateCollisionShapes(recursive: true)
+        arView.installGestures([.translation, .rotation,.scale], for: model)
+        
     }
     
-    func createModel() -> ModelEntity {
-        let sphere = MeshResource.generateSphere(radius: 0.1)
-        let sphereMaterial = SimpleMaterial(color: .red, roughness: 0, isMetallic: true)
-        let sphereEntity = ModelEntity(mesh: sphere, materials: [sphereMaterial])
-        return sphereEntity
-    }
+//    extension ARView {
+//        func enableObjectRemoval() {
+//            let longPressGuestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(recon))
+//        }
+//    }
     
-    var beenPressed = false
+    
+//    func createModel() -> ModelEntity {
+//        let sphere = MeshResource.generateSphere(radius: 0.1)
+//        let sphereMaterial = SimpleMaterial(color: .red, roughness: 0, isMetallic: true)
+//        let sphereEntity = ModelEntity(mesh: sphere, materials: [sphereMaterial])
+//        return sphereEntity
+//    }
+    
+    private var prevSender: UIButton!
+    var selectedButton: UIButton!
     @objc func buttonAction(sender: UIButton!) {
-        //let anchor = AnchorEntity()
-        //anchor.position = simd_make_float3(0, -0.5, -1)
-        if prevSender == sender {
-            beenPressed = true
+        
+        // button selection logic
+        if selectedButton != sender {
+            if selectedButton != nil {
+                resetButton(button: selectedButton)
+            }
+            selectedButton = sender
+            selectedButton.backgroundColor = UIColor(white: 1, alpha: 0.25)
+            selectedButton.layer.opacity = 0.5
+            modelConfirmedForPlacement = selectedButton.currentTitle!
+            //placeObject(modelName: selectedButton.currentTitle!, at: [0,0,0])
+            
         } else {
-            prevSender = sender
-            beenPressed = false
+            resetButton(button: sender)
         }
         
-        if beenPressed {
-            sender.backgroundColor = .gray
-            modelConfirmedForPlacement = nil
-            beenPressed = false
-        } else {
-            let modelName = sender.currentTitle!
-            modelConfirmedForPlacement = modelName
-
-            sender.backgroundColor = UIColor(white: 1, alpha: 0.3)
-            
-        }
-
 
         print("\(String(describing: sender.currentTitle)) tapped")
     }
     
+    @objc func resetButton(button: UIButton!) {
+        button.backgroundColor = buttonColor
+        button.layer.opacity = 1
+        modelConfirmedForPlacement = nil
+    }
+    
+//    @objc func handleLongPress(recongizer: UILongPressGestureRecognizer) {
+//        if let
+//    }
+//
 }

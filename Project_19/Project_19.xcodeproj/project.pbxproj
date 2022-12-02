@@ -11,6 +11,8 @@
 		57BAF4E328E4D0AC00D376CD /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4E228E4D0AC00D376CD /* Set.swift */; };
 		57BAF4E528E4D28200D376CD /* SetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4E428E4D28200D376CD /* SetTableViewCell.swift */; };
 		C81583C028F6FA3800E15F79 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81583BF28F6FA3800E15F79 /* Model.swift */; };
+		C84A8FF2292C2A10007C3C9D /* Nov14,7-46PM-poly.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C84A8FF1292C2A10007C3C9D /* Nov14,7-46PM-poly.usdz */; };
+		C84A8FF4292C30AB007C3C9D /* Nov21,5-13PM-poly.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C84A8FF3292C30AB007C3C9D /* Nov21,5-13PM-poly.usdz */; };
 		C8886BA328C6A361008B2D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BA228C6A361008B2D37 /* AppDelegate.swift */; };
 		C8886BA528C6A361008B2D37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BA428C6A361008B2D37 /* ViewController.swift */; };
 		C8886BA728C6A361008B2D37 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = C8886BA628C6A361008B2D37 /* Experience.rcproject */; };
@@ -20,6 +22,7 @@
 		C8886BB928C6A366008B2D37 /* Project_19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BB828C6A366008B2D37 /* Project_19Tests.swift */; };
 		C8886BC328C6A366008B2D37 /* Project_19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BC228C6A366008B2D37 /* Project_19UITests.swift */; };
 		C8886BC528C6A366008B2D37 /* Project_19UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BC428C6A366008B2D37 /* Project_19UITestsLaunchTests.swift */; };
+		C88CDC2C293974C900E417DA /* ThumbnailGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CDC2B293974C900E417DA /* ThumbnailGenerator.swift */; };
 		C8A8478C28EDD999006EC86C /* env1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C8A8478B28EDD998006EC86C /* env1.usdz */; };
 		C8B9C3A02925357100D585CD /* Pokemon_-_Magikarp.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C8B9C39F2925357100D585CD /* Pokemon_-_Magikarp.usdz */; };
 		C8B9C3A22925806700D585CD /* Pokemon_Jigglypuff.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C8B9C3A12925806700D585CD /* Pokemon_Jigglypuff.usdz */; };
@@ -51,6 +54,8 @@
 		57BAF4E228E4D0AC00D376CD /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		57BAF4E428E4D28200D376CD /* SetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableViewCell.swift; sourceTree = "<group>"; };
 		C81583BF28F6FA3800E15F79 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C84A8FF1292C2A10007C3C9D /* Nov14,7-46PM-poly.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Nov14,7-46PM-poly.usdz"; sourceTree = "<group>"; };
+		C84A8FF3292C30AB007C3C9D /* Nov21,5-13PM-poly.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Nov21,5-13PM-poly.usdz"; sourceTree = "<group>"; };
 		C8886B9F28C6A361008B2D37 /* Project_19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8886BA228C6A361008B2D37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8886BA428C6A361008B2D37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +68,7 @@
 		C8886BBE28C6A366008B2D37 /* Project_19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project_19UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8886BC228C6A366008B2D37 /* Project_19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_19UITests.swift; sourceTree = "<group>"; };
 		C8886BC428C6A366008B2D37 /* Project_19UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_19UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C88CDC2B293974C900E417DA /* ThumbnailGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailGenerator.swift; sourceTree = "<group>"; };
 		C8A8478B28EDD998006EC86C /* env1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = env1.usdz; sourceTree = "<group>"; };
 		C8B9C39F2925357100D585CD /* Pokemon_-_Magikarp.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Pokemon_-_Magikarp.usdz"; sourceTree = "<group>"; };
 		C8B9C3A12925806700D585CD /* Pokemon_Jigglypuff.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Pokemon_Jigglypuff.usdz; sourceTree = "<group>"; };
@@ -146,6 +152,8 @@
 				C8C8FBF129241227001F8996 /* Samba_Dancing_Pikachu.usdz */,
 				C8B9C39F2925357100D585CD /* Pokemon_-_Magikarp.usdz */,
 				C8B9C3A12925806700D585CD /* Pokemon_Jigglypuff.usdz */,
+				C84A8FF1292C2A10007C3C9D /* Nov14,7-46PM-poly.usdz */,
+				C84A8FF3292C30AB007C3C9D /* Nov21,5-13PM-poly.usdz */,
 				CCDBF48628CA36E600C5764C /* Models */,
 				57BAF4DD28E25F0200D376CD /* Views */,
 				57BAF4DC28E25EEB00D376CD /* Controllers */,
@@ -178,6 +186,7 @@
 			children = (
 				57BAF4E228E4D0AC00D376CD /* Set.swift */,
 				C81583BF28F6FA3800E15F79 /* Model.swift */,
+				C88CDC2B293974C900E417DA /* ThumbnailGenerator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -286,11 +295,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C84A8FF4292C30AB007C3C9D /* Nov21,5-13PM-poly.usdz in Resources */,
 				C8886BAF28C6A365008B2D37 /* LaunchScreen.storyboard in Resources */,
 				C8886BAC28C6A365008B2D37 /* Assets.xcassets in Resources */,
 				C8B9C3A22925806700D585CD /* Pokemon_Jigglypuff.usdz in Resources */,
 				C8886BAA28C6A361008B2D37 /* Main.storyboard in Resources */,
 				C8C8FBF229241227001F8996 /* Samba_Dancing_Pikachu.usdz in Resources */,
+				C84A8FF2292C2A10007C3C9D /* Nov14,7-46PM-poly.usdz in Resources */,
 				C8A8478C28EDD999006EC86C /* env1.usdz in Resources */,
 				C8B9C3A02925357100D585CD /* Pokemon_-_Magikarp.usdz in Resources */,
 				C8C4DF3E28F474C0003393EE /* pokemart.usdz in Resources */,
@@ -320,6 +331,7 @@
 			files = (
 				57BAF4E528E4D28200D376CD /* SetTableViewCell.swift in Sources */,
 				CCDBF48A28CA396B00C5764C /* SetListViewController.swift in Sources */,
+				C88CDC2C293974C900E417DA /* ThumbnailGenerator.swift in Sources */,
 				57BAF4E128E4CB6600D376CD /* SetListViewController2.swift in Sources */,
 				C8F8EEC028EDD36800FA12B4 /* ARViewController.swift in Sources */,
 				C8886BA528C6A361008B2D37 /* ViewController.swift in Sources */,
@@ -518,7 +530,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.danielingo.Project-19";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dingo.Project-19";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -548,7 +560,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.danielingo.Project-19";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dingo.Project-19";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
