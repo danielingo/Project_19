@@ -128,24 +128,23 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
     
     func placeObject(modelName: String, at location:SIMD3<Float>) {
         let objectAnchor = AnchorEntity(world: location)
-        
+        objectAnchor.name = modelName + "Anchor"
         let model = try! Entity.loadModel(named: modelName, in: nil)
         
         objectAnchor.addChild(model)
         
         arView.scene.addAnchor(objectAnchor)
         
+        
+        
         model.generateCollisionShapes(recursive: true)
         arView.installGestures([.translation, .rotation,.scale], for: model)
-        
+        arView.enableObjectRemoval()
+
     }
     
-//    extension ARView {
-//        func enableObjectRemoval() {
-//            let longPressGuestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(recon))
-//        }
-//    }
     
+
     
 //    func createModel() -> ModelEntity {
 //        let sphere = MeshResource.generateSphere(radius: 0.1)
@@ -187,4 +186,23 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
 //        if let
 //    }
 //
+}
+
+extension ARView {
+    func enableObjectRemoval() {
+        let longPressGuestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(recognizer:)))
+        self.addGestureRecognizer(longPressGuestureRecognizer)
+    }
+    
+    @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {
+        let location = recognizer.location(in: self)
+        
+        if let entity = self.entity(at: location) {
+            if let anchorEntity = entity.anchor//, anchorEntity.name == self.modelConfirmedForPlacement + "Anchor"
+            {
+                anchorEntity.removeFromParent()
+                print("DEBUG: Removed anchor with name:" + anchorEntity.name)
+            }
+        }
+    }
 }
