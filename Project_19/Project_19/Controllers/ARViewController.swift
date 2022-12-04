@@ -13,6 +13,8 @@ import SwiftUI
 class ARViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var arView: ARView!
 
+    
+
     // this guy automatically adds the filename of usdz models to the "models" array
     // this is just an array of model names not the actual model entities
     // Yo Linsey this be where firebase search might want to live
@@ -25,7 +27,7 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
             return []
         }
         var availableModels: [String] = []
-        for filename in files where filename.hasSuffix("usdz") {
+        for filename in files where filename.hasSuffix("usdz") && !filename.contains("-set"){
             let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
             //let model = Model(modelName: modelName)
             print("appending \(modelName)")
@@ -34,33 +36,79 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
         return availableModels
     }()
 
+    var setNames: [String] = {
+        let filemanager = FileManager.default
+
+        guard let path = Bundle.main.resourcePath, let
+            files = try?
+            filemanager.contentsOfDirectory(atPath: path) else {
+            return []
+        }
+        var availableSetNames: [String] = []
+        for filename in files where filename.hasSuffix("usdz") && filename.contains("-set") {
+            let setName = filename.replacingOccurrences(of: ".usdz", with: "")
+            print("appending \(setName)")
+            availableSetNames.append(setName)
+        }
+        return availableSetNames
+    }()
+
     
     private var modelConfirmedForPlacement: String?
+    private var setConfirmedForPlacement: String?
     var scrollview = UIScrollView()
     var scrollviewContainer = UIView()
+    var setScrollview = UIScrollView()
+    var setScrollviewContainer = UIView()
     var imageview = UIImageView()
     var view1 = UIView()
     let buttonColor = UIColor(white: 0.5, alpha: 0.9)
     @ObservedObject var thumbnailGenerator = ThumbnailGenerator()
+    var isSetPlaced = false
     
     
+    @IBOutlet var switchB: UISwitch!
+    var defauldBackground: ARView.Environment.Background!
+
+    @IBAction func switchDidChange(sender: UISwitch){
+        
+        if sender.isOn {
+            arView.environment.background = defauldBackground
+        } else {
+            arView.environment.background = .color(.systemGray)
+        }
+    }
+    
+    @IBOutlet weak var verticalSlider: UISlider!{
+            didSet{
+                verticalSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+            }
+        }
+//    @IBAction func chanceCameraHeight (sender: UISlider
+//    ){
+//        arView.cameraTransform.translation.set
+//        arView.cameraTransform.translation.z + sender.value
+//    }
+//    
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        defauldBackground = arView.environment.background
+        //let switchB = UISwitch(frame:CGRectMake(150, 300, 0, 0))
         // this is probably an unnecessary line but I feel insecure w/out it
         let modelNames = models
-
+        // update: I'm starting to feel insecure w/ it too now
+        
+        // detected that horizontal plane using beams of light
         startPlaneDetection()
         // this is what allows for tapping
         arView.addGestureRecognizer(UITapGestureRecognizer(
             target: self, action: #selector(handleTap(recognizer:))))
         
-        // change background
-        //arView.environment.background = .color(.systemGray)
+       
         
        // scroll view mumjo jumbo
         scrollview.delegate = self
-        scrollviewContainer.frame = CGRect(x: 0, y: 720, width: view.frame.size.width , height: 50)
+        scrollviewContainer.frame = CGRect(x: 0, y: 800, width: view.frame.size.width , height: 75)
         scrollview.contentSize = CGSize(width: 1000, height:50)
         scrollviewContainer.backgroundColor = UIColor(white: 1, alpha: 0.1)
         
@@ -68,14 +116,12 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
         // programmatically add button to the scroll view
         // each button has it's name set to the a model's name from the modelNames[] array
         for i in 0..<modelNames.count {
-            let button = UIButton(frame: CGRect(x: 10+(90*i), y: 720 , width: 75, height: 75))
+            let button = UIButton(frame: CGRect(x: (90*i), y: 800 , width: 75, height: 75))
             button.backgroundColor = buttonColor
             button.setTitle(modelNames[i], for: .normal)
             button.setTitleColor(UIColor.clear, for: .normal)
             button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-            
             self.thumbnailGenerator.generateThumbnail(for:modelNames[i], withExtension: "usdz", size: CGSize(width: 75, height: 75), button: button)
-            
             button.layer.cornerRadius = 5
             self.scrollview.addSubview(button)
             }
@@ -88,6 +134,32 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
         scrollview.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         scrollview.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         scrollview.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        
+       ////////////// SET SCROLL VIEW STUFF /////////////////
+        
+        setScrollview.delegate = self
+        setScrollviewContainer.frame = CGRect(x: 0, y: 700, width: view.frame.size.width , height: 75)
+        setScrollview.contentSize = CGSize(width: 1000, height:50)
+        setScrollviewContainer.backgroundColor = UIColor(white: 1, alpha: 0.1)
+        for i in 0..<setNames.count {
+            let button = UIButton(frame: CGRect(x: (90*i), y: 700 , width: 75, height: 75))
+            button.backgroundColor = buttonColor
+            button.setTitle(setNames[i], for: .normal)
+            button.setTitleColor(UIColor.clear, for: .normal)
+            button.addTarget(self, action: #selector(setButtonAction), for: .touchUpInside)
+            self.thumbnailGenerator.generateThumbnail(for:setNames[i], withExtension: "usdz", size: CGSize(width: 75, height: 75), button: button)
+            button.layer.cornerRadius = 5
+            self.setScrollview.addSubview(button)
+            }
+        setScrollviewContainer.addSubview(setScrollview)
+        view.addSubview(setScrollviewContainer)
+        
+        setScrollview.translatesAutoresizingMaskIntoConstraints = false
+        setScrollview.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        setScrollview.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        setScrollview.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        setScrollview.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
     }
     
@@ -95,7 +167,6 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
     func startPlaneDetection() {
         // this line works if run on real iPhone not simulator
         arView.automaticallyConfigureSession = true
-        
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = [.horizontal]
         arView.session.run(configuration)
@@ -103,10 +174,10 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
     }
     
     // guess what this func handles...
+    // handles the tap to place the prop
     @objc
     func handleTap(recognizer: UITapGestureRecognizer) {
         let tapLocation = recognizer.location(in: arView)
-        
         // \(^>^)/ raaaaaays
         let results = arView.raycast(
             from: tapLocation, allowing: .estimatedPlane,
@@ -115,94 +186,127 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
         if let firstResult = results.first {
             let worldPos = simd_make_float3(
                 firstResult.worldTransform.columns.3)
-                    
             // unwrapping so doesn't place NULL if button not selected
             if let modelName = modelConfirmedForPlacement {
-                placeObject(modelName: modelName, at: worldPos)
+                placeObject(modelName: modelName, at: worldPos, isProp: true)
             } else {
                 print("DEBUG: Tap handled.. modelConfirmedForPlacement NULL ")
+            }
+            if let setName = setConfirmedForPlacement {
+                
+                // THIS ENSURES ONLY 1 SET CAN BE PLACED AT A TIME
+                if !isSetPlaced {
+                    placeObject(modelName: setName, at: worldPos, isProp: false)
+                    isSetPlaced = true
+                } else {
+                    print("DEBUG: A Set has already been placed")
+                }
+                
+            } else {
+                print("DEBUG: Tap handled.. setConfirmedForPlacement NULL ")
             }
            // print("DEBUG: Tap handled.. no function yet")
         }
     }
     
-    func placeObject(modelName: String, at location:SIMD3<Float>) {
+    func placeObject(modelName: String, at location:SIMD3<Float>, isProp: Bool) {
         let objectAnchor = AnchorEntity(world: location)
         objectAnchor.name = modelName + "Anchor"
         let model = try! Entity.loadModel(named: modelName, in: nil)
-        
         objectAnchor.addChild(model)
         
         arView.scene.addAnchor(objectAnchor)
-        
-        
-        
-        model.generateCollisionShapes(recursive: true)
-        arView.installGestures([.translation, .rotation,.scale], for: model)
-        arView.enableObjectRemoval()
 
+        
+        if isProp {
+            arView.installGestures(/*[.translation, .rotation,.scale]*/.all, for: model)
+            model.generateCollisionShapes(recursive: true)
+        }
+
+        arView.enableObjectRemoval(modelName: modelName)
+        
     }
     
     
-
     
-//    func createModel() -> ModelEntity {
-//        let sphere = MeshResource.generateSphere(radius: 0.1)
-//        let sphereMaterial = SimpleMaterial(color: .red, roughness: 0, isMetallic: true)
-//        let sphereEntity = ModelEntity(mesh: sphere, materials: [sphereMaterial])
-//        return sphereEntity
-//    }
     
-    private var prevSender: UIButton!
-    var selectedButton: UIButton!
+    
+    //// BUTTON LOGIC ////
+    
+    var prevButton: UIButton!
     @objc func buttonAction(sender: UIButton!) {
-        
-        // button selection logic
-        if selectedButton != sender {
-            if selectedButton != nil {
-                resetButton(button: selectedButton)
-            }
-            selectedButton = sender
-            selectedButton.backgroundColor = UIColor(white: 1, alpha: 0.25)
-            selectedButton.layer.opacity = 0.5
-            modelConfirmedForPlacement = selectedButton.currentTitle!
-            //placeObject(modelName: selectedButton.currentTitle!, at: [0,0,0])
-            
+        // double click same button
+        if prevButton == sender {
+            resetButton()
+            prevButton = nil
+            return
         } else {
-            resetButton(button: sender)
-        }
-        
-
-        print("\(String(describing: sender.currentTitle)) tapped")
-    }
-    
-    @objc func resetButton(button: UIButton!) {
-        button.backgroundColor = buttonColor
-        button.layer.opacity = 1
-        modelConfirmedForPlacement = nil
-    }
-    
-//    @objc func handleLongPress(recongizer: UILongPressGestureRecognizer) {
-//        if let
-//    }
-//
-}
-
-extension ARView {
-    func enableObjectRemoval() {
-        let longPressGuestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(recognizer:)))
-        self.addGestureRecognizer(longPressGuestureRecognizer)
-    }
-    
-    @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {
-        let location = recognizer.location(in: self)
-        
-        if let entity = self.entity(at: location) {
-            if let anchorEntity = entity.anchor//, anchorEntity.name == self.modelConfirmedForPlacement + "Anchor"
-            {
-                anchorEntity.removeFromParent()
-                print("DEBUG: Removed anchor with name:" + anchorEntity.name)
+            if prevButton != nil {
+                resetButton()
             }
         }
+        prevButton = sender
+        sender.backgroundColor = UIColor(white: 1, alpha: 0.25)
+        sender.layer.opacity = 0.5
+        modelConfirmedForPlacement = sender.currentTitle!
+       
+        print("\(sender.currentTitle!) tapped")
     }
+    
+    @objc func resetButton() {
+        if prevButton != nil {
+            prevButton.backgroundColor = buttonColor
+            prevButton.layer.opacity = 1
+            modelConfirmedForPlacement = nil
+            print("resetting: \(prevButton.currentTitle)")
+        }
+    }
+    
+    
+    @objc func setButtonAction(sender: UIButton!) {
+        // double click same button
+        if prevButton == sender {
+            resetButton()
+            prevButton = nil
+            return
+        } else {
+            if prevButton != nil {
+                resetButton()
+            }
+        }
+        prevButton = sender
+        sender.backgroundColor = UIColor(white: 1, alpha: 0.25)
+        sender.layer.opacity = 0.5
+        setConfirmedForPlacement = sender.currentTitle!
+        print("\(sender.currentTitle!) tapped")
+    }
+    
+    
+
 }
+
+
+
+
+private var model_name: String?
+extension ARView {
+  func enableObjectRemoval(modelName: String) {
+      let longPressGuestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(recognizer:)))
+      self.addGestureRecognizer(longPressGuestureRecognizer)
+      model_name = modelName
+  }
+  
+    @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {
+      let location = recognizer.location(in: self)
+      
+      if let entity = self.entity(at: location) {
+          if let anchorEntity = entity.anchor
+                
+          {
+              anchorEntity.removeFromParent()
+              print("DEBUG: Removed model: \(model_name) at anchor: \(anchorEntity.name)")
+          }
+      }
+  }
+}
+
