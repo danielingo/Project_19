@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Load the "Box" scene from the "Experience" Reality File
         ///let boxAnchor = try! Experience.loadBox()
         

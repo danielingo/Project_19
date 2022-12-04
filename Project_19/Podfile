@@ -6,10 +6,11 @@ target 'Project_19' do
   use_frameworks!
 
   # Pods for Project_19
-pod 'Firebase/Core'
-pod 'Firebase/Auth'
-pod 'Firebase/Firestore'
-pod 'Firebase/Storage'
+pod 'FirebaseCore'
+pod 'FirebaseAuth'
+pod 'FirebaseFirestore'
+pod 'FirebaseStorage'
+pod 'FirebaseDatabase'
 pod 'GoogleSignIn'
 
   target 'Project_19Tests' do

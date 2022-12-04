@@ -10,6 +10,9 @@
 		57BAF4E128E4CB6600D376CD /* SetListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4E028E4CB6600D376CD /* SetListViewController2.swift */; };
 		57BAF4E328E4D0AC00D376CD /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4E228E4D0AC00D376CD /* Set.swift */; };
 		57BAF4E528E4D28200D376CD /* SetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4E428E4D28200D376CD /* SetTableViewCell.swift */; };
+		57BF75C2293C1FDD0072E3E1 /* GoogleSignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF75C1293C1FDD0072E3E1 /* GoogleSignInController.swift */; };
+		57BF75C6293C26F00072E3E1 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF75C5293C26F00072E3E1 /* LoginPage.swift */; };
+		57BF75C8293C35860072E3E1 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF75C7293C35860072E3E1 /* AccountView.swift */; };
 		981BB788B0F0D2CA3D13FA69 /* Pods_Project_19Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC02E234EB48E2A6F9C8EB11 /* Pods_Project_19Tests.framework */; };
 		AE95D72C177F981E86F6143F /* Pods_Project_19_Project_19UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F574123F411C2BF09B09CE7 /* Pods_Project_19_Project_19UITests.framework */; };
 		C8886BA328C6A361008B2D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BA228C6A361008B2D37 /* AppDelegate.swift */; };
@@ -55,6 +58,10 @@
 		57BAF4E028E4CB6600D376CD /* SetListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetListViewController2.swift; path = Project_19/Controllers/SetListViewController2.swift; sourceTree = SOURCE_ROOT; };
 		57BAF4E228E4D0AC00D376CD /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		57BAF4E428E4D28200D376CD /* SetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableViewCell.swift; sourceTree = "<group>"; };
+		57BF75C0293C1E090072E3E1 /* Project-19-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Project-19-Info.plist"; sourceTree = SOURCE_ROOT; };
+		57BF75C1293C1FDD0072E3E1 /* GoogleSignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInController.swift; sourceTree = "<group>"; };
+		57BF75C5293C26F00072E3E1 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		57BF75C7293C35860072E3E1 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		5F574123F411C2BF09B09CE7 /* Pods_Project_19_Project_19UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_19_Project_19UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF5871B7DDC05D9C1D4CD26 /* Pods-Project_19-Project_19UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_19-Project_19UITests.release.xcconfig"; path = "Target Support Files/Pods-Project_19-Project_19UITests/Pods-Project_19-Project_19UITests.release.xcconfig"; sourceTree = "<group>"; };
 		8444C26EC84AD0BEEA6B7F69 /* Pods-Project_19-Project_19UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_19-Project_19UITests.debug.xcconfig"; path = "Target Support Files/Pods-Project_19-Project_19UITests/Pods-Project_19-Project_19UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,7 +84,7 @@
 		CCA0A2BA291B274100562DB2 /* TagDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDataSource.swift; sourceTree = "<group>"; };
 		CCBEF1B029107AF40072B080 /* NewSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSetViewController.swift; sourceTree = "<group>"; };
 		CCBEF1B229107C670072B080 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		CCBEF1B4291081240072B080 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CCBEF1B4291081240072B080 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CCC208BD291B1BB40054CEFD /* AddSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetViewController.swift; sourceTree = "<group>"; };
 		CCDBF48928CA396B00C5764C /* SetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetListViewController.swift; sourceTree = "<group>"; };
 		E6FF610002F9DFD787E8D16A /* Pods-Project_19.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_19.debug.xcconfig"; path = "Target Support Files/Pods-Project_19/Pods-Project_19.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +124,7 @@
 		57BAF4DC28E25EEB00D376CD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				57BF75C4293C26D00072E3E1 /* SignIn */,
 				C8886BA428C6A361008B2D37 /* ViewController.swift */,
 				C8F8EEBF28EDD36800FA12B4 /* ARViewController.swift */,
 				CCDBF48928CA396B00C5764C /* SetListViewController.swift */,
@@ -124,6 +132,7 @@
 				CCBEF1B029107AF40072B080 /* NewSetViewController.swift */,
 				CCC208BD291B1BB40054CEFD /* AddSetViewController.swift */,
 				CCA0A2B8291B21A800562DB2 /* TagPickerViewController.swift */,
+				57BF75C1293C1FDD0072E3E1 /* GoogleSignInController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -136,6 +145,15 @@
 				C8886BAD28C6A365008B2D37 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		57BF75C4293C26D00072E3E1 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				57BF75C5293C26F00072E3E1 /* LoginPage.swift */,
+				57BF75C7293C35860072E3E1 /* AccountView.swift */,
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		6CAC4F42CAD0517441F3D599 /* Pods */ = {
@@ -164,7 +182,6 @@
 		C8886B9628C6A361008B2D37 = {
 			isa = PBXGroup;
 			children = (
-				CCBEF1B4291081240072B080 /* GoogleService-Info.plist */,
 				C8886BA128C6A361008B2D37 /* Project_19 */,
 				C8886BB728C6A366008B2D37 /* Project_19Tests */,
 				C8886BC128C6A366008B2D37 /* Project_19UITests */,
@@ -187,6 +204,8 @@
 		C8886BA128C6A361008B2D37 /* Project_19 */ = {
 			isa = PBXGroup;
 			children = (
+				57BF75C0293C1E090072E3E1 /* Project-19-Info.plist */,
+				CCBEF1B4291081240072B080 /* GoogleService-Info.plist */,
 				C8A8478B28EDD998006EC86C /* env1.usdz */,
 				C8C4DF3D28F474BF003393EE /* pokemart.usdz */,
 				CCDBF48628CA36E600C5764C /* Models */,
@@ -471,11 +490,14 @@
 				CCA0A2BB291B274100562DB2 /* TagDataSource.swift in Sources */,
 				CCDBF48A28CA396B00C5764C /* SetListViewController.swift in Sources */,
 				CCBEF1B129107AF40072B080 /* NewSetViewController.swift in Sources */,
+				57BF75C6293C26F00072E3E1 /* LoginPage.swift in Sources */,
 				CCC208BE291B1BB40054CEFD /* AddSetViewController.swift in Sources */,
 				57BAF4E128E4CB6600D376CD /* SetListViewController2.swift in Sources */,
 				C8F8EEC028EDD36800FA12B4 /* ARViewController.swift in Sources */,
 				CCA0A2B9291B21A800562DB2 /* TagPickerViewController.swift in Sources */,
+				57BF75C8293C35860072E3E1 /* AccountView.swift in Sources */,
 				C8886BA528C6A361008B2D37 /* ViewController.swift in Sources */,
+				57BF75C2293C1FDD0072E3E1 /* GoogleSignInController.swift in Sources */,
 				57BAF4E328E4D0AC00D376CD /* Set.swift in Sources */,
 				C8886BA328C6A361008B2D37 /* AppDelegate.swift in Sources */,
 				C8886BA728C6A361008B2D37 /* Experience.rcproject in Sources */,
@@ -650,6 +672,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z9R9MJ9T36;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Project-19-Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -681,6 +704,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z9R9MJ9T36;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Project-19-Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

@@ -6,11 +6,11 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseCore
+import GoogleSignIn
 
-// @UIApplicationMain ???? look into this
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: NSObject, UIApplicationDelegate {
 
     var window: UIWindow?
 
@@ -18,7 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+//        GIDSignIn.sharedInstance.clientID = FirebaseApp.app()?.options.clientID
         return true
+    }
+    
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        print("User email: \(user.profile?.email ?? "")");
+//    }
+//    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey: Any])
+      -> Bool {
+      return GIDSignIn.sharedInstance.handle(url)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
