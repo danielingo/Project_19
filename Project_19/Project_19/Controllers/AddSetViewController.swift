@@ -16,22 +16,39 @@ class AddSetViewController: UITableViewController {
             tagLabel.text = tag
         }
     }
+    var newTitle = "" {
+        didSet {
+            nameTextField.text = newTitle
+        }
+    }
     
     @IBOutlet weak var nameTextField : UITextField!
     @IBOutlet weak var tagLabel: UILabel!
     
-    
-    
-    
     override func viewDidLoad() {
         tag = "Bubblegum"
+        newTitle = "set name here"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("DDDDDDD")
         if segue.identifier == "PickTag",
            let tagPickerViewController = segue.destination as? TagPickerViewController {
+            print("EEEEEEEE")
             tagPickerViewController.tagDataSource.selectedTag = tag
+            print("FFFFFFF")
+        } else if segue.identifier == "showNewARView",
+           let ARViewVC = segue.destination as? ARViewController {
+            print("GGGGGGG")
+            if let name = nameTextField.text, !name.isEmpty {
+                print("HHHHHHHH")
+                newTitle = name
+                print("Title: ", newTitle)
+                ARViewVC.title = newTitle
+                print("IIIIIIIII")
+            }
         }
+        print("JJJJJJJJJ")
     }
     
 }

@@ -77,7 +77,7 @@
             <objects>
                 <viewController title="ViewController" id="3PH-Gz-vrM" customClass="ARViewController" customModule="Project_19" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wjO-RE-ay0">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bd1-Vw-VCr">
@@ -138,6 +138,7 @@
                                     <outlet property="setDate" destination="jgH-wz-yn5" id="MqO-PH-X2H"/>
                                     <outlet property="setImage" destination="rFf-Nw-6n6" id="PBB-zk-Hl1"/>
                                     <outlet property="setTitle" destination="hGQ-fl-Xuq" id="Sg7-LX-IKf"/>
+                                    <segue destination="3PH-Gz-vrM" kind="show" identifier="showExistingARView" id="I5G-MZ-iO9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -217,6 +218,26 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="0vh-DT-41X">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="q1C-TQ-gsh">
+                                        <rect key="frame" x="20" y="208.33333587646484" width="350" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q1C-TQ-gsh" id="YQ5-Cu-oJo">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6a-u0-I92">
+                                                    <rect key="frame" x="71" y="7" width="208" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Import LiDAR Scan" titleAlignment="center"/>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="F6c-Ug-Qpf" id="BBz-98-LKD"/>
@@ -231,20 +252,21 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="fSb-4H-iYr">
                             <connections>
-                                <segue destination="jK7-jE-EMi" kind="unwind" unwindAction="doneToARView:" id="0H4-42-tYf"/>
+                                <action selector="doneButtonClicked:" destination="kOu-cx-2Ff" id="xiT-jv-Jax"/>
+                                <segue destination="3PH-Gz-vrM" kind="show" identifier="showNewARView" id="1w6-pq-OhH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
-                        <outlet property="nameTextField" destination="VE4-yk-NpL" id="vT5-rm-8EY"/>
+                        <outlet property="nameTextField" destination="VE4-yk-NpL" id="FX6-Ml-Qfq"/>
                         <outlet property="tagLabel" destination="Vp6-yT-TMv" id="V6Z-wa-oSi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOu-cx-2Ff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="jK7-jE-EMi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2571" y="-968"/>
+            <point key="canvasLocation" x="2569.2307692307691" y="-968.24644549763025"/>
         </scene>
         <!--Tag Picker View Controller-->
         <scene sceneID="HBt-af-uHk">
@@ -308,6 +330,9 @@
             <point key="canvasLocation" x="1684" y="-968"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1w6-pq-OhH"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
