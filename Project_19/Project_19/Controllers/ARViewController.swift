@@ -81,11 +81,7 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    @IBOutlet weak var verticalSlider: UISlider!{
-            didSet{
-                verticalSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
-            }
-    }
+   
     
     
     @IBAction func clearScreen(_ sender: UIButton) {
@@ -148,7 +144,7 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
         
        // scroll view mumjo jumbo
         scrollview.delegate = self
-        scrollviewContainer.frame = CGRect(x: 0, y: 800, width: view.frame.size.width , height: 75)
+        scrollviewContainer.frame = CGRect(x: 0, y: 750, width: view.frame.size.width , height: 75)
         scrollview.contentSize = CGSize(width: 1000, height:50)
         scrollviewContainer.backgroundColor = UIColor(white: 1, alpha: 0.1)
         
@@ -156,7 +152,7 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
         // programmatically add button to the scroll view
         // each button has it's name set to the a model's name from the modelNames[] array
         for i in 0..<modelNames.count {
-            let button = UIButton(frame: CGRect(x: (90*i), y: 800 , width: 75, height: 75))
+            let button = UIButton(frame: CGRect(x: 10+(90*i), y: 750 , width: 75, height: 75))
             button.backgroundColor = buttonColor
             button.setTitle(modelNames[i], for: .normal)
             button.setTitleColor(UIColor.clear, for: .normal)
@@ -179,11 +175,11 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
        ////////////// SET SCROLL VIEW STUFF /////////////////
         
         setScrollview.delegate = self
-        setScrollviewContainer.frame = CGRect(x: 0, y: 700, width: view.frame.size.width , height: 75)
+        setScrollviewContainer.frame = CGRect(x: 0, y: 650, width: view.frame.size.width , height: 75)
         setScrollview.contentSize = CGSize(width: 1000, height:50)
         setScrollviewContainer.backgroundColor = UIColor(white: 1, alpha: 0.1)
         for i in 0..<setNames.count {
-            let button = UIButton(frame: CGRect(x: (90*i), y: 700 , width: 75, height: 75))
+            let button = UIButton(frame: CGRect(x: 10+(90*i), y: 650 , width: 75, height: 75))
             button.backgroundColor = buttonColor
             button.setTitle(setNames[i], for: .normal)
             button.setTitleColor(UIColor.clear, for: .normal)

@@ -24,6 +24,10 @@
 		C8B718ED293D23D100B95F1B /* metalroom_door-set.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C8B718EC293D23D100B95F1B /* metalroom_door-set.usdz */; };
 		C8F8EEC028EDD36800FA12B4 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8EEBF28EDD36800FA12B4 /* ARViewController.swift */; };
 		CC0B1494293D816100CD4163 /* ThumbnailGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0B1493293D816100CD4163 /* ThumbnailGenerator.swift */; };
+		CC0B1498293D91E900CD4163 /* Samba_Dancing_Pikachu.usdz in Resources */ = {isa = PBXBuildFile; fileRef = CC0B1495293D91E800CD4163 /* Samba_Dancing_Pikachu.usdz */; };
+		CC0B1499293D91E900CD4163 /* Pokemon_-_Magikarp.usdz in Resources */ = {isa = PBXBuildFile; fileRef = CC0B1496293D91E800CD4163 /* Pokemon_-_Magikarp.usdz */; };
+		CC0B149A293D91E900CD4163 /* Pokemon_Jigglypuff.usdz in Resources */ = {isa = PBXBuildFile; fileRef = CC0B1497293D91E800CD4163 /* Pokemon_Jigglypuff.usdz */; };
+		CC0B149C293D920C00CD4163 /* pokemart-set.usdz in Resources */ = {isa = PBXBuildFile; fileRef = CC0B149B293D920C00CD4163 /* pokemart-set.usdz */; };
 		CCA0A2B9291B21A800562DB2 /* TagPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0A2B8291B21A800562DB2 /* TagPickerViewController.swift */; };
 		CCA0A2BB291B274100562DB2 /* TagDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0A2BA291B274100562DB2 /* TagDataSource.swift */; };
 		CCBEF1B129107AF40072B080 /* NewSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBEF1B029107AF40072B080 /* NewSetViewController.swift */; };
@@ -81,6 +85,10 @@
 		C8C8FBF129241227001F8996 /* Samba_Dancing_Pikachu.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Samba_Dancing_Pikachu.usdz; sourceTree = "<group>"; };
 		C8F8EEBF28EDD36800FA12B4 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		CC0B1493293D816100CD4163 /* ThumbnailGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailGenerator.swift; sourceTree = "<group>"; };
+		CC0B1495293D91E800CD4163 /* Samba_Dancing_Pikachu.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Samba_Dancing_Pikachu.usdz; sourceTree = "<group>"; };
+		CC0B1496293D91E800CD4163 /* Pokemon_-_Magikarp.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Pokemon_-_Magikarp.usdz"; sourceTree = "<group>"; };
+		CC0B1497293D91E800CD4163 /* Pokemon_Jigglypuff.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Pokemon_Jigglypuff.usdz; sourceTree = "<group>"; };
+		CC0B149B293D920C00CD4163 /* pokemart-set.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "pokemart-set.usdz"; sourceTree = "<group>"; };
 		CCA0A2B8291B21A800562DB2 /* TagPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPickerViewController.swift; sourceTree = "<group>"; };
 		CCA0A2BA291B274100562DB2 /* TagDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDataSource.swift; sourceTree = "<group>"; };
 		CCBEF1B029107AF40072B080 /* NewSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSetViewController.swift; sourceTree = "<group>"; };
@@ -197,12 +205,16 @@
 			children = (
 				C8B718EA293C248400B95F1B /* swing-set.usdz */,
 				C8B718E8293C245600B95F1B /* pokemart-set.usdz */,
+				CC0B149B293D920C00CD4163 /* pokemart-set.usdz */,
+				CC0B1496293D91E800CD4163 /* Pokemon_-_Magikarp.usdz */,
+				CC0B1497293D91E800CD4163 /* Pokemon_Jigglypuff.usdz */,
 				C8C8FBF129241227001F8996 /* Samba_Dancing_Pikachu.usdz */,
 				C8B9C39F2925357100D585CD /* Pokemon_-_Magikarp.usdz */,
 				C8B9C3A12925806700D585CD /* Pokemon_Jigglypuff.usdz */,
 				C88CDC2D293C16A600E417DA /* room-set.usdz */,
 				C88CDC2F293C187200E417DA /* stair-set.usdz */,
 				C8B718EC293D23D100B95F1B /* metalroom_door-set.usdz */,
+				CC0B1495293D91E800CD4163 /* Samba_Dancing_Pikachu.usdz */,
 				CCDBF48628CA36E600C5764C /* Models */,
 				57BAF4DD28E25F0200D376CD /* Views */,
 				57BAF4DC28E25EEB00D376CD /* Controllers */,
@@ -351,7 +363,11 @@
 			files = (
 				C8B718EB293C248400B95F1B /* swing-set.usdz in Resources */,
 				C8886BAF28C6A365008B2D37 /* LaunchScreen.storyboard in Resources */,
+				CC0B1498293D91E900CD4163 /* Samba_Dancing_Pikachu.usdz in Resources */,
+				CC0B149C293D920C00CD4163 /* pokemart-set.usdz in Resources */,
+				CC0B1499293D91E900CD4163 /* Pokemon_-_Magikarp.usdz in Resources */,
 				C8B718ED293D23D100B95F1B /* metalroom_door-set.usdz in Resources */,
+				CC0B149A293D91E900CD4163 /* Pokemon_Jigglypuff.usdz in Resources */,
 				C8886BAC28C6A365008B2D37 /* Assets.xcassets in Resources */,
 				CCBEF1B329107C670072B080 /* Main.storyboard in Resources */,
 				CCBEF1B5291081240072B080 /* GoogleService-Info.plist in Resources */,
