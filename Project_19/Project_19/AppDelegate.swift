@@ -6,15 +6,29 @@
 //
 
 import UIKit
+import Firebase
 
+// @UIApplicationMain ???? look into this
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+//    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+//
+//        return true
+//    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseConfiguration.shared.setLoggerLevel(.min)
+        FirebaseApp.configure()
+        
+        guard FirebaseApp.app() != nil
+            else {
+                assert(false, "could not retreive default Firebase app")
+            }
+        
         return true
     }
 
