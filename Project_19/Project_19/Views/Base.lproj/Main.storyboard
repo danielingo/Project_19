@@ -98,13 +98,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9Iw-g7-9se">
-                                <rect key="frame" x="325" y="221" width="118" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-Va-JHv">
+                                <rect key="frame" x="336" y="112" width="72" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Clear"/>
                                 <connections>
-                                    <action selector="chanceCameraHeightWithSender:" destination="3PH-Gz-vrM" eventType="valueChanged" id="M6Z-rg-jXk"/>
+                                    <action selector="clearScreen:" destination="3PH-Gz-vrM" eventType="touchUpInside" id="hzF-nL-UFR"/>
                                 </connections>
-                            </slider>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdS-u8-j2V">
+                                <rect key="frame" x="355" y="173" width="42" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.up" catalog="system"/>
+                                <connections>
+                                    <action selector="upHeight:" destination="3PH-Gz-vrM" eventType="touchUpInside" id="Qed-J7-m8d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qd0-C5-EWB">
+                                <rect key="frame" x="355" y="227" width="42" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.down" catalog="system"/>
+                                <connections>
+                                    <action selector="downHeight:" destination="3PH-Gz-vrM" eventType="touchUpInside" id="ik4-kd-JQ6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nw5-S6-56l">
+                                <rect key="frame" x="32" y="73" width="53" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="xmark.square.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="2DV-TG-cVd" kind="presentation" modalPresentationStyle="fullScreen" id="Dbh-dP-yCr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tsm-z1-kKR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -112,7 +141,6 @@
                     <connections>
                         <outlet property="arView" destination="Bd1-Vw-VCr" id="bME-Fm-ZEt"/>
                         <outlet property="switchB" destination="G94-x2-vTP" id="Oxs-Dg-YpK"/>
-                        <outlet property="verticalSlider" destination="9Iw-g7-9se" id="j6g-ql-2iZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cO5-0z-ZKz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -571,8 +599,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.down" catalog="system" width="120" height="128"/>
+        <image name="arrow.up" catalog="system" width="120" height="128"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
+        <image name="xmark.square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

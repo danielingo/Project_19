@@ -65,7 +65,9 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
     let buttonColor = UIColor(white: 0.5, alpha: 0.9)
     @ObservedObject var thumbnailGenerator = ThumbnailGenerator()
     var isSetPlaced = false
-    
+    var selectedAnchor: AnchorEntity?
+    var anchorList = [AnchorEntity]()
+    var anchorHeight = Float(0.0)
     
     @IBOutlet var switchB: UISwitch!
     var defauldBackground: ARView.Environment.Background!
@@ -83,13 +85,51 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
             didSet{
                 verticalSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
             }
+    }
+    
+    
+    @IBAction func clearScreen(_ sender: UIButton) {
+        for anchor in anchorList {
+            arView.scene.removeAnchor(anchor)
         }
-//    @IBAction func chanceCameraHeight (sender: UISlider
-//    ){
-//        arView.cameraTransform.translation.set
-//        arView.cameraTransform.translation.z + sender.value
+        
+        
+    }
+    @IBAction func upHeight(_ sender: UIButton) {
+        anchorHeight += 0.01
+        if selectedAnchor != nil {
+            selectedAnchor?.setPosition([0,anchorHeight,0], relativeTo: selectedAnchor)
+        }
+    }
+    
+    @IBAction func downHeight(_ sender: UIButton) {
+        anchorHeight -= 0.01
+        if selectedAnchor != nil {
+            selectedAnchor?.setPosition([0,anchorHeight,0], relativeTo: selectedAnchor)
+        }
+    }
+    
+    
+   // var prevValue: Float?
+//    @IBAction func setHeight(_ sender: UIStepper) {
+//        if selectedAnchor != nil {
+//            let x = Float((selectedAnchor?.position.x)!)
+//            var y = Float((selectedAnchor?.position.y)!)
+//            let z = Float((selectedAnchor?.position.z)!)
+//
+//            sender.stepValue = -0.01
+//            y = Float(sender.stepValue)
+//
+//            sender.
+//
+//            selectedAnchor?.setPosition([x,y,z], relativeTo: selectedAnchor)
+//           // prevValue = y
+//            //print("DEBUG: Anchor Position: \(selectedAnchor?.position)")
+//        }
 //    }
-//    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         defauldBackground = arView.environment.background
@@ -210,19 +250,22 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func placeObject(modelName: String, at location:SIMD3<Float>, isProp: Bool) {
-        let objectAnchor = AnchorEntity(world: location)
-        objectAnchor.name = modelName + "Anchor"
+        selectedAnchor = AnchorEntity(world: location)
+        selectedAnchor?.name = modelName + "Anchor"
         let model = try! Entity.loadModel(named: modelName, in: nil)
-        objectAnchor.addChild(model)
         
-        arView.scene.addAnchor(objectAnchor)
+        //selectedEntity = model
+        
+        selectedAnchor?.addChild(model)
+        
+        arView.scene.addAnchor(selectedAnchor!)
 
-        
+        //selectedAnchor = objectAnchor
+        anchorList.append(selectedAnchor!)
         if isProp {
             arView.installGestures(/*[.translation, .rotation,.scale]*/.all, for: model)
             model.generateCollisionShapes(recursive: true)
         }
-
         arView.enableObjectRemoval(modelName: modelName)
         
     }
@@ -258,6 +301,8 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
             prevButton.backgroundColor = buttonColor
             prevButton.layer.opacity = 1
             modelConfirmedForPlacement = nil
+            setConfirmedForPlacement = nil
+            
             print("resetting: \(prevButton.currentTitle)")
         }
     }
