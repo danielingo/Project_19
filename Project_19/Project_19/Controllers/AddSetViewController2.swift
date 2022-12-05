@@ -23,7 +23,7 @@ class AddSetViewController: UITableViewController {
         }
     }
     var importedSetURL = ""
-    var modelURL: URL?
+    var setURL: URL
     
     @IBOutlet weak var nameTextField : UITextField!
     @IBOutlet weak var tagLabel: UILabel!
@@ -48,6 +48,7 @@ class AddSetViewController: UITableViewController {
                 newTitle = name
                 print("Title: ", newTitle)
                 ARViewVC.title = newTitle
+                downloadUSDZwName(url: setURL, setName: newTitle)
                 print("IIIIIIIII")
             }
         }
@@ -68,16 +69,61 @@ class AddSetViewController: UITableViewController {
             )
             // documentsURL.startAccessingSecurityScopedResource()
             let directoryURL = documentsURL.appendingPathComponent("Sets")
-            if !FileManager.fileExists(atPath: directoryURL.path) {
+            if !FileManager.default.fileExists(atPath: directoryURL.path) {
                 do {
                     try FileManager.default.createDirectory(atPath: directoryURL.path, 
                                                             withIntermediateDirectories: true, 
                                                             attributes: nil)
                 } catch {
-                    print("Unable to create directory: \(error.debugDescription)")
+                    print("Unable to create directory: ", error)
                 }
             }
             let saveURL = directoryURL.appendingPathComponent(url.lastPathComponent)
+            // saveURL.startAccessingSecurityScopedResource()
+            do {
+                
+                try FileManager.default.copyItem(at: url, to: saveURL)
+                
+                print("saveURL: ", saveURL)
+            } catch (let writeError) {
+                print("Error creating a file \(saveURL) : \(writeError)")
+            }
+            
+            // saveURL.stopAccessingSecurityScopedResource()
+            // documentsURL.stopAccessingSecurityScopedResource()
+            
+            // url.stopAccessingSecurityScopedResource()
+        } catch {
+            print(error)
+        }
+        
+    }
+
+     func downloadUSDZwName(url: URL, setName: String) {
+        
+        // url.startAccessingSecurityScopedResource()
+        
+        // let documentsURL:URL = Bundle.main.resourceURL!
+        do {
+            let documentsURL:URL = try FileManager.default.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: false
+            )
+            // documentsURL.startAccessingSecurityScopedResource()
+            let directoryURL = documentsURL.appendingPathComponent("Sets")
+            if !FileManager.default.fileExists(atPath: directoryURL.path) {
+                do {
+                    try FileManager.default.createDirectory(atPath: directoryURL.path, 
+                                                            withIntermediateDirectories: true, 
+                                                            attributes: nil)
+                } catch {
+                    print("Unable to create directory: ", error)
+                }
+            }
+            let fullSetName = setName + ".usdz"
+            let saveURL = directoryURL.appendingPathComponent(fullSetName)
             // saveURL.startAccessingSecurityScopedResource()
             do {
                 
@@ -160,6 +206,8 @@ extension AddSetViewController: UIDocumentPickerDelegate {
         print("importedSetURL", importedSetURL)
         
 //        let importedSet = try? Entity.load(contentsOf: url)
+        setURL = url
+
         downloadUSDZ(url: url)
         print("YEEEET5")
         

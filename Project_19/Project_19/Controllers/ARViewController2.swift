@@ -13,6 +13,7 @@ import SwiftUI
 class ARViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var arView: ARView!
 
+    var selectedSet: String?
     
 
     // this guy automatically adds the filename of usdz models to the "models" array
@@ -38,13 +39,13 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
                 create: false
             )
             let directoryURL = documentsURL.appendingPathComponent("Props")
-            if !FileManager.fileExists(atPath: directoryURL.path) {
+            if !filemanager.fileExists(atPath: directoryURL.path) {
                 do {
                     try FileManager.default.createDirectory(atPath: directoryURL.path, 
                                                             withIntermediateDirectories: true, 
                                                             attributes: nil)
                 } catch {
-                    print("Unable to create directory: \(error.debugDescription)")
+                    print("Unable to create directory: ", error)
                 }
             }
             guard let files = try? filemanager.contentsOfDirectory(atPath: directoryURL.path) else {
@@ -104,13 +105,13 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
                 create: false
             )
             let directoryURL = documentsURL.appendingPathComponent("Sets")
-            if !FileManager.fileExists(atPath: directoryURL.path) {
+            if !filemanager.fileExists(atPath: directoryURL.path) {
                 do {
                     try FileManager.default.createDirectory(atPath: directoryURL.path, 
                                                             withIntermediateDirectories: true, 
                                                             attributes: nil)
                 } catch {
-                    print("Unable to create directory: \(error.debugDescription)")
+                    print("Unable to create directory: ", error)
                 }
             }
             guard let files = try? filemanager.contentsOfDirectory(atPath: directoryURL.path) else {
