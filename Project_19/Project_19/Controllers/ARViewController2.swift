@@ -37,12 +37,22 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
                 appropriateFor: nil,
                 create: false
             )
-            guard let files = try? filemanager.contentsOfDirectory(atPath: documentsURL.path) else {
+            let directoryURL = documentsURL.appendingPathComponent("Props")
+            if !FileManager.fileExists(atPath: directoryURL.path) {
+                do {
+                    try FileManager.default.createDirectory(atPath: directoryURL.path, 
+                                                            withIntermediateDirectories: true, 
+                                                            attributes: nil)
+                } catch {
+                    print("Unable to create directory: \(error.debugDescription)")
+                }
+            }
+            guard let files = try? filemanager.contentsOfDirectory(atPath: directoryURL.path) else {
                 return []
             }
             print("path: ", documentsURL.path)
 
-            for filename in files where filename.hasSuffix("usdz") && !filename.contains("-set"){
+            for filename in files where filename.hasSuffix("usdz") {
                 print("filename: ", filename)
                 
                 let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
@@ -93,7 +103,17 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
                 appropriateFor: nil,
                 create: false
             )
-            guard let files = try? filemanager.contentsOfDirectory(atPath: documentsURL.path) && filename.contains("-set") else {
+            let directoryURL = documentsURL.appendingPathComponent("Sets")
+            if !FileManager.fileExists(atPath: directoryURL.path) {
+                do {
+                    try FileManager.default.createDirectory(atPath: directoryURL.path, 
+                                                            withIntermediateDirectories: true, 
+                                                            attributes: nil)
+                } catch {
+                    print("Unable to create directory: \(error.debugDescription)")
+                }
+            }
+            guard let files = try? filemanager.contentsOfDirectory(atPath: directoryURL.path) else {
                 return []
             }
             

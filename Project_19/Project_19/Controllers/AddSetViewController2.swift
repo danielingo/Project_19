@@ -67,7 +67,17 @@ class AddSetViewController: UITableViewController {
                 create: false
             )
             // documentsURL.startAccessingSecurityScopedResource()
-            let saveURL = documentsURL.appendingPathComponent(url.lastPathComponent)
+            let directoryURL = documentsURL.appendingPathComponent("Sets")
+            if !FileManager.fileExists(atPath: directoryURL.path) {
+                do {
+                    try FileManager.default.createDirectory(atPath: directoryURL.path, 
+                                                            withIntermediateDirectories: true, 
+                                                            attributes: nil)
+                } catch {
+                    print("Unable to create directory: \(error.debugDescription)")
+                }
+            }
+            let saveURL = directoryURL.appendingPathComponent(url.lastPathComponent)
             // saveURL.startAccessingSecurityScopedResource()
             do {
                 
