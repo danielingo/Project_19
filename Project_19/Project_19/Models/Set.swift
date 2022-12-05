@@ -16,11 +16,11 @@ struct Set {
 #if DEBUG
 extension Set {
     static var sampleData = [
-        Set(title: "Beach View", date: Date(), image: UIImage(named: "Images/beach.jpeg")!),
-        Set(title: "City View", date: Date(), image: UIImage(named: "Images/city.jpeg")!),
-        Set(title: "Apartment View", date: Date(), image: UIImage(named: "Images/apartment.jpeg")!),
-        Set(title: "Mountain View", date: Date(), image: UIImage(named: "Images/mountain.jpeg")!),
-        Set(title: "Tech View", date: Date(), image: UIImage(named: "Images/tech.jpeg")!)
+        Set(title: "Beach View", date: Date(), image: UIImage(named: "beach.jpeg")!),
+        Set(title: "City View", date: Date(), image: UIImage(named: "city.jpeg")!),
+        Set(title: "Apartment View", date: Date(), image: UIImage(named: "apartment.jpeg")!),
+        Set(title: "Mountain View", date: Date(), image: UIImage(named: "mountain.jpeg")!),
+        Set(title: "Tech View", date: Date(), image: UIImage(named: "tech.jpeg")!)
     ]
 }
 #endif
