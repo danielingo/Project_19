@@ -56,12 +56,18 @@ class AddSetViewController: UITableViewController {
     
     func downloadUSDZ(url: URL) {
         
-        url.startAccessingSecurityScopedResource()
+        // url.startAccessingSecurityScopedResource()
         
-        let documentsURL:URL = Bundle.main.resourceURL!
-        documentsURL.startAccessingSecurityScopedResource()
+        // let documentsURL:URL = Bundle.main.resourceURL!
+        let documentsURL:URL = try FileManager.default.url(
+            for: .documentDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: false
+        )
+        // documentsURL.startAccessingSecurityScopedResource()
         let saveURL = documentsURL.appendingPathComponent(url.lastPathComponent)
-        saveURL.startAccessingSecurityScopedResource()
+        // saveURL.startAccessingSecurityScopedResource()
         do {
             
             try FileManager.default.copyItem(at: url, to: saveURL)
@@ -71,10 +77,10 @@ class AddSetViewController: UITableViewController {
             print("Error creating a file \(saveURL) : \(writeError)")
         }
         
-        saveURL.stopAccessingSecurityScopedResource()
-        documentsURL.stopAccessingSecurityScopedResource()
+        // saveURL.stopAccessingSecurityScopedResource()
+        // documentsURL.stopAccessingSecurityScopedResource()
         
-        url.stopAccessingSecurityScopedResource()
+        // url.stopAccessingSecurityScopedResource()
         
     }
     

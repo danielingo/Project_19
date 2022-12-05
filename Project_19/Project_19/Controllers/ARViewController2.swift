@@ -21,12 +21,29 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
     private var models: [String] =  {
         let filemanager = FileManager.default
 
-        guard let path = Bundle.main.resourcePath, let
-            files = try?
-            filemanager.contentsOfDirectory(atPath: path) else {
-            return []
-        }
-        print("path: ", path)
+        // let documentsURL:URL = try filemanager.url(
+        //     for: .documentDirectory,
+        //     in: .userDomainMask,
+        //     appropriateFor: nil,
+        //     create: false
+        // )
+
+        guard let documentsURL:URL = try filemanager.url(
+            for: .documentDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: false
+        ), let files = try? filemanager.contentsOfDirectory(at: documentsURL) else {
+                return []
+            }
+        print("path: ", documentsURL.path)
+
+        // guard let path = Bundle.main.resourcePath, let
+        //     files = try?
+        //     filemanager.contentsOfDirectory(atPath: path) else {
+        //     return []
+        // }
+        // print("path: ", path)
         
         var availableModels: [String] = []
         for filename in files where filename.hasSuffix("usdz") && !filename.contains("-set"){
