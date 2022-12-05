@@ -28,15 +28,20 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
         //     create: false
         // )
 
-        guard let documentsURL:URL = try filemanager.url(
-            for: .documentDirectory,
-            in: .userDomainMask,
-            appropriateFor: nil,
-            create: false
-        ), let files = try? filemanager.contentsOfDirectory(at: documentsURL) else {
+        do {
+            let documentsURL:URL = try filemanager.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: false
+            )
+            guard let files = try? filemanager.contentsOfDirectory(atPath: documentsURL.path) else {
                 return []
             }
-        print("path: ", documentsURL.path)
+            print("path: ", documentsURL.path)
+        } catch {
+            print(error)
+        }
 
         // guard let path = Bundle.main.resourcePath, let
         //     files = try?
