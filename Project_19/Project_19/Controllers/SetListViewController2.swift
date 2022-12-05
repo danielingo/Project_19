@@ -12,8 +12,6 @@ import FirebaseFirestore
 import Firebase
 
 class SetListViewController2: UITableViewController {
-//    @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var nameTextField : UITextField!
     
     func setupFirebase() {
@@ -49,14 +47,10 @@ class SetListViewController2: UITableViewController {
 //    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("AAAAAAAAA")
         if segue.identifier == "showExistingARView",
            let ARViewVC = segue.destination as? ARViewController, let indexPath = tableView.indexPathForSelectedRow {
-            print("BBBBBBB")
             print("Selected Set: ", indexPath.row)
-//            ARViewVC.selectedSet = setList[indexPath.row]
         }
-        print("CCCCCCCC")
     }
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     // segue = showExistingARView
@@ -66,7 +60,6 @@ class SetListViewController2: UITableViewController {
 //        }
 //    }
     
-//    @IBAction func unwindDone
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return setList.count
@@ -76,7 +69,6 @@ class SetListViewController2: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Set Table View Cell", for: indexPath) as! SetTableViewCell
         
         
-//        cell.setPostedImage(image: image!)
         let set = setList[indexPath.row]
         
         let dateFormatter = DateFormatter()
@@ -92,13 +84,9 @@ class SetListViewController2: UITableViewController {
     
     func writeData(){
         
-        print("YEEEHAW1")
         if let name = self.nameTextField.text, !name.isEmpty {
-            print("YEEEHAW2")
             saveData(text: name)
-            print("YEEHAW3")
         }
-        print("YEEEEEHAW4")
     }
     
     func saveData(text: String) {
@@ -122,25 +110,11 @@ extension SetListViewController2 {
     }
     
     @IBAction func doneButtonClicked(_ sender: Any) {
-        print("DONE BUTTON CLICKED")
-        
-//        writeData()
-        
-//        self.navigationController?.popViewController(animated: true)
-//        self.navigationController?.popToRootViewController(animated: true)
-//        self.navigationController?.popViewController(animated: true)
-        
-        
-//        doneToARView(UIStoryboardSegue)
+        print("Done")
     }
     
     @IBAction func doneToARView(_ segue: UIStoryboardSegue) {
         print("Create New Set --> Done Button Clicked")
         
-        
-        // NANI THE FK
     }
-    
-    
-    
 }

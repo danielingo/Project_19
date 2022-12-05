@@ -39,7 +39,6 @@
 		CCBEF1B329107C670072B080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCBEF1B229107C670072B080 /* Main.storyboard */; };
 		CCBEF1B5291081240072B080 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCBEF1B4291081240072B080 /* GoogleService-Info.plist */; };
 		CCC208BE291B1BB40054CEFD /* AddSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC208BD291B1BB40054CEFD /* AddSetViewController.swift */; };
-		CCDBF48A28CA396B00C5764C /* SetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDBF48928CA396B00C5764C /* SetListViewController.swift */; };
 		ED0BA52FC4F0191211D7A0A4 /* Pods_Project_19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED96BCDE3FB4D3F30BC8C6ED /* Pods_Project_19.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,7 +104,6 @@
 		CCBEF1B229107C670072B080 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CCBEF1B4291081240072B080 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CCC208BD291B1BB40054CEFD /* AddSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetViewController.swift; sourceTree = "<group>"; };
-		CCDBF48928CA396B00C5764C /* SetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetListViewController.swift; sourceTree = "<group>"; };
 		E6FF610002F9DFD787E8D16A /* Pods-Project_19.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_19.debug.xcconfig"; path = "Target Support Files/Pods-Project_19/Pods-Project_19.debug.xcconfig"; sourceTree = "<group>"; };
 		EC02E234EB48E2A6F9C8EB11 /* Pods_Project_19Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_19Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED96BCDE3FB4D3F30BC8C6ED /* Pods_Project_19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,7 +143,6 @@
 			children = (
 				C8886BA428C6A361008B2D37 /* ViewController.swift */,
 				C8F8EEBF28EDD36800FA12B4 /* ARViewController.swift */,
-				CCDBF48928CA396B00C5764C /* SetListViewController.swift */,
 				57BAF4E028E4CB6600D376CD /* SetListViewController2.swift */,
 				CCBEF1B029107AF40072B080 /* NewSetViewController.swift */,
 				CCC208BD291B1BB40054CEFD /* AddSetViewController.swift */,
@@ -528,7 +525,6 @@
 			files = (
 				57BAF4E528E4D28200D376CD /* SetTableViewCell.swift in Sources */,
 				CCA0A2BB291B274100562DB2 /* TagDataSource.swift in Sources */,
-				CCDBF48A28CA396B00C5764C /* SetListViewController.swift in Sources */,
 				CCBEF1B129107AF40072B080 /* NewSetViewController.swift in Sources */,
 				CCC208BE291B1BB40054CEFD /* AddSetViewController.swift in Sources */,
 				57BAF4E128E4CB6600D376CD /* SetListViewController2.swift in Sources */,
