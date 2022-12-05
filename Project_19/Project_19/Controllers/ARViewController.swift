@@ -232,7 +232,7 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
             button.setTitle(modelNames[i], for: .normal)
             button.setTitleColor(UIColor.clear, for: .normal)
             button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-            self.thumbnailGenerator.generateThumbnail(for:modelNames[i], withExtension: "usdz", size: CGSize(width: 75, height: 75), button: button)
+            self.thumbnailGenerator.generateThumbnail(for:modelNames[i], withExtension: "usdz", size: CGSize(width: 75, height: 75), button: button, isProp: true)
             button.layer.cornerRadius = 5
             self.scrollview.addSubview(button)
             }
@@ -259,7 +259,7 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
             button.setTitle(setNames[i], for: .normal)
             button.setTitleColor(UIColor.clear, for: .normal)
             button.addTarget(self, action: #selector(setButtonAction), for: .touchUpInside)
-            self.thumbnailGenerator.generateThumbnail(for:setNames[i], withExtension: "usdz", size: CGSize(width: 75, height: 75), button: button)
+            self.thumbnailGenerator.generateThumbnail(for:setNames[i], withExtension: "usdz", size: CGSize(width: 75, height: 75), button: button, isProp: false)
             button.layer.cornerRadius = 5
             self.setScrollview.addSubview(button)
             }
@@ -323,21 +323,72 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
     func placeObject(modelName: String, at location:SIMD3<Float>, isProp: Bool) {
         selectedAnchor = AnchorEntity(world: location)
         selectedAnchor?.name = modelName + "Anchor"
-        let model = try! Entity.loadModel(named: modelName, in: nil)
+        
+        let fullModelName = modelName + ".usdz"
+        
+        let model: ModelEntity?
+//        let modelURL: URL?
+        
+        do {
+            let documentsURL:URL = try FileManager.default.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: false
+            )
+            if !isProp {
+                let directoryURL = documentsURL.appendingPathComponent("Sets")
+                let modelURL = directoryURL.appendingPathComponent(fullModelName)
+                
+                model = try! Entity.loadModel(contentsOf: modelURL)
+                
+                selectedAnchor?.addChild(model!)
+                
+                arView.scene.addAnchor(selectedAnchor!)
+
+                //selectedAnchor = objectAnchor
+                anchorList.append(selectedAnchor!)
+//                if isProp {
+//                    arView.installGestures(/*[.translation, .rotation,.scale]*/.all, for: model!)
+//                    model!.generateCollisionShapes(recursive: true)
+//                }
+                arView.enableObjectRemoval(modelName: modelName)
+                
+            } else {
+                let directoryURL = documentsURL.appendingPathComponent("Props")
+                let modelURL = directoryURL.appendingPathComponent(fullModelName)
+                
+                model = try! Entity.loadModel(contentsOf: modelURL)
+                
+                selectedAnchor?.addChild(model!)
+                
+                arView.scene.addAnchor(selectedAnchor!)
+
+                //selectedAnchor = objectAnchor
+                anchorList.append(selectedAnchor!)
+                arView.installGestures(/*[.translation, .rotation,.scale]*/.all, for: model!)
+                model!.generateCollisionShapes(recursive: true)
+                arView.enableObjectRemoval(modelName: modelName)
+            }
+        } catch {
+            print(error)
+        }
+        
+//        model = try! Entity.loadModel(contentsOf: modelURL!)
         
         //selectedEntity = model
         
-        selectedAnchor?.addChild(model)
-        
-        arView.scene.addAnchor(selectedAnchor!)
-
-        //selectedAnchor = objectAnchor
-        anchorList.append(selectedAnchor!)
-        if isProp {
-            arView.installGestures(/*[.translation, .rotation,.scale]*/.all, for: model)
-            model.generateCollisionShapes(recursive: true)
-        }
-        arView.enableObjectRemoval(modelName: modelName)
+//        selectedAnchor?.addChild(model!)
+//
+//        arView.scene.addAnchor(selectedAnchor!)
+//
+//        //selectedAnchor = objectAnchor
+//        anchorList.append(selectedAnchor!)
+//        if isProp {
+//            arView.installGestures(/*[.translation, .rotation,.scale]*/.all, for: model!)
+//            model!.generateCollisionShapes(recursive: true)
+//        }
+//        arView.enableObjectRemoval(modelName: modelName)
         
     }
     

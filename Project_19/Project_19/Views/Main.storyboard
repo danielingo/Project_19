@@ -128,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Set Table View Cell" rowHeight="76" translatesAutoresizingMaskIntoConstraints="NO" id="pH1-PV-1Yr" customClass="SetTableViewCell" customModule="Project_19" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Set Table View Cell" rowHeight="76" translatesAutoresizingMaskIntoConstraints="NO" id="pH1-PV-1Yr" customClass="SetTableViewCell" customModule="Project_19" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="49" width="390" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="pH1-PV-1Yr" id="hi6-hL-mSD" customClass="UITableView">
@@ -409,6 +409,11 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="setDate" destination="3I2-3I-SzP" id="zxz-rP-9Zc"/>
+                                    <outlet property="setImage" destination="OjT-Z4-IEa" id="jRN-cH-3Yn"/>
+                                    <outlet property="setTitle" destination="oR1-ml-iN2" id="dgv-jg-rPC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -471,6 +476,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Import Prop from Files"/>
+                                                    <connections>
+                                                        <action selector="importButtonTapped" destination="PX7-bF-oDy" eventType="touchUpInside" id="n9p-gC-Fas"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>

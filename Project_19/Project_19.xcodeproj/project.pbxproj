@@ -32,6 +32,7 @@
 		CCA0A2BB291B274100562DB2 /* TagDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0A2BA291B274100562DB2 /* TagDataSource.swift */; };
 		CCB9FFE3293E243E007A872E /* AddPropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB9FFE2293E243E007A872E /* AddPropViewController.swift */; };
 		CCB9FFE5293E246E007A872E /* PropListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB9FFE4293E246E007A872E /* PropListViewController.swift */; };
+		CCB9FFE7293E310B007A872E /* Images in Resources */ = {isa = PBXBuildFile; fileRef = CCB9FFE6293E310A007A872E /* Images */; };
 		CCBEF1B129107AF40072B080 /* NewSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBEF1B029107AF40072B080 /* NewSetViewController.swift */; };
 		CCBEF1B329107C670072B080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCBEF1B229107C670072B080 /* Main.storyboard */; };
 		CCBEF1B5291081240072B080 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCBEF1B4291081240072B080 /* GoogleService-Info.plist */; };
@@ -96,6 +97,7 @@
 		CCA0A2BA291B274100562DB2 /* TagDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDataSource.swift; sourceTree = "<group>"; };
 		CCB9FFE2293E243E007A872E /* AddPropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPropViewController.swift; sourceTree = "<group>"; };
 		CCB9FFE4293E246E007A872E /* PropListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropListViewController.swift; sourceTree = "<group>"; };
+		CCB9FFE6293E310A007A872E /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		CCBEF1B029107AF40072B080 /* NewSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSetViewController.swift; sourceTree = "<group>"; };
 		CCBEF1B229107C670072B080 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CCBEF1B4291081240072B080 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		C8886BA128C6A361008B2D37 /* Project_19 */ = {
 			isa = PBXGroup;
 			children = (
+				CCB9FFE6293E310A007A872E /* Images */,
 				C8B718EA293C248400B95F1B /* swing-set.usdz */,
 				C8B718E8293C245600B95F1B /* pokemart-set.usdz */,
 				CC0B149B293D920C00CD4163 /* pokemart-set.usdz */,
@@ -370,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCB9FFE7293E310B007A872E /* Images in Resources */,
 				C8B718EB293C248400B95F1B /* swing-set.usdz in Resources */,
 				C8886BAF28C6A365008B2D37 /* LaunchScreen.storyboard in Resources */,
 				CC0B1498293D91E900CD4163 /* Samba_Dancing_Pikachu.usdz in Resources */,

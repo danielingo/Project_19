@@ -69,7 +69,9 @@ class AddPropViewController: UITableViewController {
             // saveURL.startAccessingSecurityScopedResource()
             do {
                 
+                print("BEFORE CP PROP")
                 try FileManager.default.copyItem(at: url, to: saveURL)
+                print("AFTER CP PROP")
                 
                 print("saveURL: ", saveURL)
             } catch (let writeError) {

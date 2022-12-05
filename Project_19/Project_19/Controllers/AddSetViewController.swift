@@ -55,49 +55,51 @@ class AddSetViewController: UITableViewController {
         print("JJJJJJJJJ")
     }
     
-    func downloadUSDZ(url: URL) {
-        
-        // url.startAccessingSecurityScopedResource()
-        
-        // let documentsURL:URL = Bundle.main.resourceURL!
-        do {
-            let documentsURL:URL = try FileManager.default.url(
-                for: .documentDirectory,
-                in: .userDomainMask,
-                appropriateFor: nil,
-                create: false
-            )
-            // documentsURL.startAccessingSecurityScopedResource()
-            let directoryURL = documentsURL.appendingPathComponent("Sets")
-            if !FileManager.default.fileExists(atPath: directoryURL.path) {
-                do {
-                    try FileManager.default.createDirectory(atPath: directoryURL.path,
-                                                            withIntermediateDirectories: true,
-                                                            attributes: nil)
-                } catch {
-                    print("Unable to create directory: ", error)
-                }
-            }
-            let saveURL = directoryURL.appendingPathComponent(url.lastPathComponent)
-            // saveURL.startAccessingSecurityScopedResource()
-            do {
-                
-                try FileManager.default.copyItem(at: url, to: saveURL)
-                
-                print("saveURL: ", saveURL)
-            } catch (let writeError) {
-                print("Error creating a file \(saveURL) : \(writeError)")
-            }
-            
-            // saveURL.stopAccessingSecurityScopedResource()
-            // documentsURL.stopAccessingSecurityScopedResource()
-            
-            // url.stopAccessingSecurityScopedResource()
-        } catch {
-            print(error)
-        }
-        
-    }
+//    func downloadUSDZ(url: URL) {
+//
+//        // url.startAccessingSecurityScopedResource()
+//
+//        // let documentsURL:URL = Bundle.main.resourceURL!
+//        do {
+//            let documentsURL:URL = try FileManager.default.url(
+//                for: .documentDirectory,
+//                in: .userDomainMask,
+//                appropriateFor: nil,
+//                create: false
+//            )
+//            // documentsURL.startAccessingSecurityScopedResource()
+//            let directoryURL = documentsURL.appendingPathComponent("Sets")
+//            if !FileManager.default.fileExists(atPath: directoryURL.path) {
+//                do {
+//                    try FileManager.default.createDirectory(atPath: directoryURL.path,
+//                                                            withIntermediateDirectories: true,
+//                                                            attributes: nil)
+//                } catch {
+//                    print("Unable to create directory: ", error)
+//                }
+//            }
+//            let saveURL = directoryURL.appendingPathComponent(url.lastPathComponent)
+//            // saveURL.startAccessingSecurityScopedResource()
+//            do {
+//                print("BEFORE COPY SET")
+//
+//                try FileManager.default.copyItem(at: url, to: saveURL)
+//
+//                print("AFTER COPY SET")
+//                print("saveURL: ", saveURL)
+//            } catch (let writeError) {
+//                print("Error creating a file \(saveURL) : \(writeError)")
+//            }
+//            
+//            // saveURL.stopAccessingSecurityScopedResource()
+//            // documentsURL.stopAccessingSecurityScopedResource()
+//
+//            // url.stopAccessingSecurityScopedResource()
+//        } catch {
+//            print(error)
+//        }
+//
+//    }
 
      func downloadUSDZwName(url: URL, setName: String) {
         
@@ -127,7 +129,9 @@ class AddSetViewController: UITableViewController {
             // saveURL.startAccessingSecurityScopedResource()
             do {
                 
+                print("BEFORE CP SET")
                 try FileManager.default.copyItem(at: url, to: saveURL)
+                print("AFTER CP SET")
                 
                 print("saveURL: ", saveURL)
             } catch (let writeError) {
