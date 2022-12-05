@@ -59,28 +59,32 @@ class AddSetViewController: UITableViewController {
         // url.startAccessingSecurityScopedResource()
         
         // let documentsURL:URL = Bundle.main.resourceURL!
-        let documentsURL:URL = try FileManager.default.url(
-            for: .documentDirectory,
-            in: .userDomainMask,
-            appropriateFor: nil,
-            create: false
-        )
-        // documentsURL.startAccessingSecurityScopedResource()
-        let saveURL = documentsURL.appendingPathComponent(url.lastPathComponent)
-        // saveURL.startAccessingSecurityScopedResource()
         do {
+            let documentsURL:URL = try FileManager.default.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: false
+            )
+            // documentsURL.startAccessingSecurityScopedResource()
+            let saveURL = documentsURL.appendingPathComponent(url.lastPathComponent)
+            // saveURL.startAccessingSecurityScopedResource()
+            do {
+                
+                try FileManager.default.copyItem(at: url, to: saveURL)
+                
+                print("saveURL: ", saveURL)
+            } catch (let writeError) {
+                print("Error creating a file \(saveURL) : \(writeError)")
+            }
             
-            try FileManager.default.copyItem(at: url, to: saveURL)
+            // saveURL.stopAccessingSecurityScopedResource()
+            // documentsURL.stopAccessingSecurityScopedResource()
             
-            print("saveURL: ", saveURL)
-        } catch (let writeError) {
-            print("Error creating a file \(saveURL) : \(writeError)")
+            // url.stopAccessingSecurityScopedResource()
+        } catch {
+            print(error)
         }
-        
-        // saveURL.stopAccessingSecurityScopedResource()
-        // documentsURL.stopAccessingSecurityScopedResource()
-        
-        // url.stopAccessingSecurityScopedResource()
         
     }
     
