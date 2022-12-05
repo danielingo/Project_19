@@ -28,6 +28,8 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
         //     create: false
         // )
 
+        var availableModels: [String] = []
+
         do {
             let documentsURL:URL = try filemanager.url(
                 for: .documentDirectory,
@@ -39,6 +41,15 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
                 return []
             }
             print("path: ", documentsURL.path)
+
+            for filename in files where filename.hasSuffix("usdz") && !filename.contains("-set"){
+                print("filename: ", filename)
+                
+                let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
+                //let model = Model(modelName: modelName)
+                print("appending \(modelName)")
+                availableModels.append(modelName)
+            }
         } catch {
             print(error)
         }
@@ -49,16 +60,14 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
         //     return []
         // }
         // print("path: ", path)
-        
-        var availableModels: [String] = []
-        for filename in files where filename.hasSuffix("usdz") && !filename.contains("-set"){
-            print("filename: ", filename)
+        // for filename in files where filename.hasSuffix("usdz") && !filename.contains("-set"){
+        //     print("filename: ", filename)
             
-            let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
-            //let model = Model(modelName: modelName)
-            print("appending \(modelName)")
-            availableModels.append(modelName)
-        }
+        //     let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
+        //     //let model = Model(modelName: modelName)
+        //     print("appending \(modelName)")
+        //     availableModels.append(modelName)
+        // }
         return availableModels
     }()
 
