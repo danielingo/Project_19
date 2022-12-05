@@ -1,8 +1,8 @@
 //
-//  SetListViewController2.swift
+//  PropListViewController.swift
 //  Project_19
 //
-//  Created by Kirtana Mogili on 9/28/22.
+//  Created by Linsey Chen on 12/4/22.
 //
 import Foundation
 import UIKit
@@ -10,7 +10,7 @@ import os
 import FirebaseFirestore
 import Firebase
 
-class SetListViewController2: UITableViewController {
+class PropListViewController: UITableViewController {
 //    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var nameTextField : UITextField!
@@ -32,7 +32,7 @@ class SetListViewController2: UITableViewController {
     }
     
     
-    let setList = Set.sampleData
+    let propList = Set.sampleData
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,16 +47,16 @@ class SetListViewController2: UITableViewController {
 //        }
 //    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("AAAAAAAAA")
-        if segue.identifier == "showExistingARView",
-           let ARViewVC = segue.destination as? ARViewController, let indexPath = tableView.indexPathForSelectedRow {
-            print("BBBBBBB")
-            print("Selected Set: ", indexPath.row)
-           ARViewVC.selectedSet = setList[indexPath.row].title
-        }
-        print("CCCCCCCC")
-    }
+//     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//         print("AAAAAAAAA")
+//         if segue.identifier == "showExistingARView",
+//            let PListVC = segue.destination as? PropList, let indexPath = tableView.indexPathForSelectedRow {
+//             print("BBBBBBB")
+//             print("Selected Set: ", indexPath.row)
+// //            ARViewVC.selectedSet = setList[indexPath.row]
+//         }
+//         print("CCCCCCCC")
+//     }
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     // segue = showExistingARView
 //        if let ARViewVC = segue.destination as? ARViewController,
@@ -68,15 +68,15 @@ class SetListViewController2: UITableViewController {
 //    @IBAction func unwindDone
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return setList.count
+        return propList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Set Table View Cell", for: indexPath) as! SetTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Prop Table View Cell", for: indexPath) as! SetTableViewCell
         
         
 //        cell.setPostedImage(image: image!)
-        let set = setList[indexPath.row]
+        let set = propList[indexPath.row]
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
@@ -114,7 +114,7 @@ class SetListViewController2: UITableViewController {
     
 }
 
-extension SetListViewController2 {
+extension PropListViewController {
     
     @IBAction func cancelToParentView(_ segue: UIStoryboardSegue) {
         print(segue.identifier!)
@@ -129,16 +129,8 @@ extension SetListViewController2 {
 //        self.navigationController?.popToRootViewController(animated: true)
 //        self.navigationController?.popViewController(animated: true)
         
-        
-//        doneToARView(UIStoryboardSegue)
     }
     
-    @IBAction func doneToARView(_ segue: UIStoryboardSegue) {
-        print("Create New Set --> Done Button Clicked")
-        
-        
-        // NANI THE FK
-    }
     
     
     

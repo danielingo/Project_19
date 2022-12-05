@@ -4,7 +4,6 @@
 //
 //  Created by Daniel Ingo on 10/5/22.
 //
-
 import UIKit
 import ARKit
 import RealityKit
@@ -13,6 +12,7 @@ import SwiftUI
 class ARViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var arView: ARView!
 
+    var selectedSet: String?
     
 
     // this guy automatically adds the filename of usdz models to the "models" array
@@ -21,35 +21,110 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
     private var models: [String] =  {
         let filemanager = FileManager.default
 
-        guard let path = Bundle.main.resourcePath, let
-            files = try?
-            filemanager.contentsOfDirectory(atPath: path) else {
-            return []
-        }
+        // let documentsURL:URL = try filemanager.url(
+        //     for: .documentDirectory,
+        //     in: .userDomainMask,
+        //     appropriateFor: nil,
+        //     create: false
+        // )
         var availableModels: [String] = []
-        for filename in files where filename.hasSuffix("usdz") && !filename.contains("-set"){
-            let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
-            //let model = Model(modelName: modelName)
-            print("appending \(modelName)")
-            availableModels.append(modelName)
+
+        do {
+            let documentsURL:URL = try filemanager.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: false
+            )
+            let directoryURL = documentsURL.appendingPathComponent("Props")
+            if !filemanager.fileExists(atPath: directoryURL.path) {
+                do {
+                    try FileManager.default.createDirectory(atPath: directoryURL.path,
+                                                            withIntermediateDirectories: true,
+                                                            attributes: nil)
+                } catch {
+                    print("Unable to create directory: ", error)
+                }
+            }
+            guard let files = try? filemanager.contentsOfDirectory(atPath: directoryURL.path) else {
+                return []
+            }
+            print("path: ", documentsURL.path)
+
+            for filename in files where filename.hasSuffix("usdz") {
+                print("filename: ", filename)
+                
+                let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
+                //let model = Model(modelName: modelName)
+                print("appending \(modelName)")
+                availableModels.append(modelName)
+            }
+        } catch {
+            print(error)
         }
+
+        // guard let path = Bundle.main.resourcePath, let
+        //     files = try?
+        //     filemanager.contentsOfDirectory(atPath: path) else {
+        //     return []
+        // }
+        // print("path: ", path)
+        // for filename in files where filename.hasSuffix("usdz") && !filename.contains("-set"){
+        //     print("filename: ", filename)
+            
+        //     let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
+        //     //let model = Model(modelName: modelName)
+        //     print("appending \(modelName)")
+        //     availableModels.append(modelName)
+        // }
         return availableModels
     }()
 
     var setNames: [String] = {
         let filemanager = FileManager.default
-
-        guard let path = Bundle.main.resourcePath, let
-            files = try?
-            filemanager.contentsOfDirectory(atPath: path) else {
-            return []
-        }
         var availableSetNames: [String] = []
-        for filename in files where filename.hasSuffix("usdz") && filename.contains("-set") {
-            let setName = filename.replacingOccurrences(of: ".usdz", with: "")
-            print("appending \(setName)")
-            availableSetNames.append(setName)
+
+        // guard let path = Bundle.main.resourcePath, let
+        //     files = try?
+        //     filemanager.contentsOfDirectory(atPath: path) else {
+        //     return []
+        // }
+        
+        // for filename in files where filename.hasSuffix("usdz") && filename.contains("-set") {
+        //     let setName = filename.replacingOccurrences(of: ".usdz", with: "")
+        //     print("appending \(setName)")
+        //     availableSetNames.append(setName)
+        // }
+        do {
+            let documentsURL:URL = try filemanager.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: false
+            )
+            let directoryURL = documentsURL.appendingPathComponent("Sets")
+            if !filemanager.fileExists(atPath: directoryURL.path) {
+                do {
+                    try FileManager.default.createDirectory(atPath: directoryURL.path,
+                                                            withIntermediateDirectories: true,
+                                                            attributes: nil)
+                } catch {
+                    print("Unable to create directory: ", error)
+                }
+            }
+            guard let files = try? filemanager.contentsOfDirectory(atPath: directoryURL.path) else {
+                return []
+            }
+            
+            for filename in files where filename.hasSuffix("usdz") {
+                let setName = filename.replacingOccurrences(of: ".usdz", with: "")
+                print("appending \(setName)")
+                availableSetNames.append(setName)
+            }
+        } catch {
+            print(error)
         }
+
         return availableSetNames
     }()
 
@@ -333,7 +408,6 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
 //    }
 //}
 
-
 private var model_name: String?
 extension ARView {
   func enableObjectRemoval(modelName: String) {
@@ -355,4 +429,3 @@ extension ARView {
       }
   }
 }
-
