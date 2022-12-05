@@ -1,5 +1,18 @@
 # Project_19
 # JD 2200: Lidar scan that allows you to view and test out different objects in various lidar view scenes.
+## Version 0.5.0
+### Features:
+  * User can toggle camera on or off in AR view
+  * User can use buttons to increase or decrease a prop's height
+  * User can import LiDAR scan on set creation
+### Bug Fixes:
+  * User was previously not able to select or delete props in a set but is able to now
+  * Bug that prevented user from replacing a set which was fixed
+  * Bug where user could select multiple props/sets at once was fixed
+### Known Issues:
+  * Props currently do not appear in their relative locations in the set for the user when the set loads
+  * The scene won't be to scale sometimes when anchored, user may need to reset and place a couple times before an adequately scaled scene is loaded in
+  * User currently cannot import or delete props
 ## Version 0.4.0
 ### Features:
   * User can access and search through a list of props in the set environment
