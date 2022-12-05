@@ -77,7 +77,7 @@
             <objects>
                 <viewController title="ViewController" id="3PH-Gz-vrM" customClass="ARViewController" customModule="Project_19" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wjO-RE-ay0">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bd1-Vw-VCr">
@@ -88,7 +88,14 @@
                         <viewLayoutGuide key="safeArea" id="Tsm-z1-kKR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ikf-3h-meF"/>
+                    <navigationItem key="navigationItem" id="Ikf-3h-meF">
+                        <barButtonItem key="leftBarButtonItem" title="Return" image="chevron.backward" catalog="system" id="GGI-an-P2n">
+                            <connections>
+                                <action selector="returnToParent:" destination="3PH-Gz-vrM" id="NS2-VQ-VOb"/>
+                                <segue destination="eSG-9B-UT3" kind="show" id="Yzf-Tb-Ku7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="arView" destination="Bd1-Vw-VCr" id="bME-Fm-ZEt"/>
                     </connections>
@@ -102,7 +109,7 @@
             <objects>
                 <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="eSG-9B-UT3" customClass="SetListViewController2" customModule="Project_19" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="10" estimatedSectionHeaderHeight="-1" sectionFooterHeight="10" estimatedSectionFooterHeight="-1" id="JyU-VC-Axp">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -162,7 +169,7 @@
             <objects>
                 <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="F6c-Ug-Qpf" customClass="AddSetViewController" customModule="Project_19" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="UCl-Ed-83m">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -247,7 +254,7 @@
                     <navigationItem key="navigationItem" title="Create Set" id="p0x-G4-Sqx">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="lrq-h0-dCH">
                             <connections>
-                                <segue destination="jK7-jE-EMi" kind="unwind" unwindAction="cancelToParentView:" id="YBc-qA-OKK"/>
+                                <segue destination="jK7-jE-EMi" kind="unwind" identifier="returntoSetList" unwindAction="cancelToParentView:" id="YBc-qA-OKK"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="fSb-4H-iYr">
@@ -273,7 +280,7 @@
             <objects>
                 <tableViewController id="gWb-cT-60n" customClass="TagPickerViewController" customModule="Project_19" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" sectionIndexMinimumDisplayRowCount="10" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="6bl-15-q9j">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -318,7 +325,7 @@
                 <navigationController id="CuA-f0-tlm" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="DIr-UW-mxS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mhF-34-DEA">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -331,9 +338,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1w6-pq-OhH"/>
+        <segue reference="Yzf-Tb-Ku7"/>
+        <segue reference="I5G-MZ-iO9"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">

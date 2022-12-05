@@ -330,7 +330,12 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
 
 }
 
-
+//extension ARViewController {
+//    @IBAction func returnToParent(_ sender: Any) {
+//        print("KKKKKKKKKKK")
+//        performSegue(withIdentifier: "returntoSetList", sender: nil)
+//    }
+//}
 
 
 private var model_name: String?
