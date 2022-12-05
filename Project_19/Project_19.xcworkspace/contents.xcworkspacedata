@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Project_19/Images">
+   </FileRef>
+   <FileRef
       location = "group:Project_19.xcodeproj">
    </FileRef>
    <FileRef

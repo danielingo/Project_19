@@ -10,6 +10,11 @@
 		57BAF4E128E4CB6600D376CD /* SetListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4E028E4CB6600D376CD /* SetListViewController2.swift */; };
 		57BAF4E328E4D0AC00D376CD /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4E228E4D0AC00D376CD /* Set.swift */; };
 		57BAF4E528E4D28200D376CD /* SetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAF4E428E4D28200D376CD /* SetTableViewCell.swift */; };
+		57BF75E0293E8F730072E3E1 /* city.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 57BF75DB293E8F720072E3E1 /* city.jpeg */; };
+		57BF75E1293E8F730072E3E1 /* tech.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 57BF75DC293E8F720072E3E1 /* tech.jpeg */; };
+		57BF75E2293E8F730072E3E1 /* beach.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 57BF75DD293E8F720072E3E1 /* beach.jpeg */; };
+		57BF75E3293E8F730072E3E1 /* apartment.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 57BF75DE293E8F720072E3E1 /* apartment.jpeg */; };
+		57BF75E4293E8F730072E3E1 /* mountain.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 57BF75DF293E8F720072E3E1 /* mountain.jpeg */; };
 		981BB788B0F0D2CA3D13FA69 /* Pods_Project_19Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC02E234EB48E2A6F9C8EB11 /* Pods_Project_19Tests.framework */; };
 		AE95D72C177F981E86F6143F /* Pods_Project_19_Project_19UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F574123F411C2BF09B09CE7 /* Pods_Project_19_Project_19UITests.framework */; };
 		C8886BA328C6A361008B2D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8886BA228C6A361008B2D37 /* AppDelegate.swift */; };
@@ -60,6 +65,11 @@
 		57BAF4E028E4CB6600D376CD /* SetListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetListViewController2.swift; path = Project_19/Controllers/SetListViewController2.swift; sourceTree = SOURCE_ROOT; };
 		57BAF4E228E4D0AC00D376CD /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		57BAF4E428E4D28200D376CD /* SetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableViewCell.swift; sourceTree = "<group>"; };
+		57BF75DB293E8F720072E3E1 /* city.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = city.jpeg; sourceTree = "<group>"; };
+		57BF75DC293E8F720072E3E1 /* tech.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tech.jpeg; sourceTree = "<group>"; };
+		57BF75DD293E8F720072E3E1 /* beach.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beach.jpeg; sourceTree = "<group>"; };
+		57BF75DE293E8F720072E3E1 /* apartment.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apartment.jpeg; sourceTree = "<group>"; };
+		57BF75DF293E8F720072E3E1 /* mountain.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mountain.jpeg; sourceTree = "<group>"; };
 		5F574123F411C2BF09B09CE7 /* Pods_Project_19_Project_19UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_19_Project_19UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF5871B7DDC05D9C1D4CD26 /* Pods-Project_19-Project_19UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_19-Project_19UITests.release.xcconfig"; path = "Target Support Files/Pods-Project_19-Project_19UITests/Pods-Project_19-Project_19UITests.release.xcconfig"; sourceTree = "<group>"; };
 		8444C26EC84AD0BEEA6B7F69 /* Pods-Project_19-Project_19UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_19-Project_19UITests.debug.xcconfig"; path = "Target Support Files/Pods-Project_19-Project_19UITests/Pods-Project_19-Project_19UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +164,18 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		57BF75DA293E8F720072E3E1 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				57BF75DB293E8F720072E3E1 /* city.jpeg */,
+				57BF75DC293E8F720072E3E1 /* tech.jpeg */,
+				57BF75DD293E8F720072E3E1 /* beach.jpeg */,
+				57BF75DE293E8F720072E3E1 /* apartment.jpeg */,
+				57BF75DF293E8F720072E3E1 /* mountain.jpeg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		6CAC4F42CAD0517441F3D599 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +225,7 @@
 		C8886BA128C6A361008B2D37 /* Project_19 */ = {
 			isa = PBXGroup;
 			children = (
+				57BF75DA293E8F720072E3E1 /* Images */,
 				C8B718EA293C248400B95F1B /* swing-set.usdz */,
 				C8B718E8293C245600B95F1B /* pokemart-set.usdz */,
 				CC0B149B293D920C00CD4163 /* pokemart-set.usdz */,
@@ -363,8 +386,13 @@
 			files = (
 				C8B718EB293C248400B95F1B /* swing-set.usdz in Resources */,
 				C8886BAF28C6A365008B2D37 /* LaunchScreen.storyboard in Resources */,
+				57BF75E3293E8F730072E3E1 /* apartment.jpeg in Resources */,
+				57BF75E0293E8F730072E3E1 /* city.jpeg in Resources */,
 				CC0B1498293D91E900CD4163 /* Samba_Dancing_Pikachu.usdz in Resources */,
 				CC0B149C293D920C00CD4163 /* pokemart-set.usdz in Resources */,
+				57BF75E1293E8F730072E3E1 /* tech.jpeg in Resources */,
+				57BF75E2293E8F730072E3E1 /* beach.jpeg in Resources */,
+				57BF75E4293E8F730072E3E1 /* mountain.jpeg in Resources */,
 				CC0B1499293D91E900CD4163 /* Pokemon_-_Magikarp.usdz in Resources */,
 				C8B718ED293D23D100B95F1B /* metalroom_door-set.usdz in Resources */,
 				CC0B149A293D91E900CD4163 /* Pokemon_Jigglypuff.usdz in Resources */,
