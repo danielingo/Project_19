@@ -6,19 +6,21 @@
 //
 
 import Foundation
+import UIKit
+
 struct Set {
     var title: String
     var date: Date
-    var image: String
+    var image: UIImage
 }
 #if DEBUG
 extension Set {
     static var sampleData = [
-        Set(title: "Beach View", date: Date(), image: ""),
-        Set(title: "City View", date: Date(), image: ""),
-        Set(title: "Apartment View", date: Date(), image: ""),
-        Set(title: "Mountain View", date: Date(), image: ""),
-        Set(title: "Tech View", date: Date(), image: "")
+        Set(title: "Beach View", date: Date(), image: UIImage(named: "Images/beach.jpeg")!),
+        Set(title: "City View", date: Date(), image: UIImage(named: "Images/city.jpeg")!),
+        Set(title: "Apartment View", date: Date(), image: UIImage(named: "Images/apartment.jpeg")!),
+        Set(title: "Mountain View", date: Date(), image: UIImage(named: "Images/mountain.jpeg")!),
+        Set(title: "Tech View", date: Date(), image: UIImage(named: "Images/tech.jpeg")!)
     ]
 }
 #endif

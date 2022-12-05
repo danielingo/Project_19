@@ -74,15 +74,18 @@ class SetListViewController2: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Set Table View Cell", for: indexPath) as! SetTableViewCell
+        
+        
+//        cell.setPostedImage(image: image!)
         let set = setList[indexPath.row]
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
-                
+        
         cell.setTitle.text = set.title
         cell.setDate.text = dateFormatter.string(from: set.date)
-        cell.setImage = nil
+        cell.setPostedImage(image: set.image)
         
         return cell
     }
