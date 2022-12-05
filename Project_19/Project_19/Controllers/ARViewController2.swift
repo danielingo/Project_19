@@ -73,18 +73,39 @@ class ARViewController: UIViewController, UIScrollViewDelegate {
 
     var setNames: [String] = {
         let filemanager = FileManager.default
-
-        guard let path = Bundle.main.resourcePath, let
-            files = try?
-            filemanager.contentsOfDirectory(atPath: path) else {
-            return []
-        }
         var availableSetNames: [String] = []
-        for filename in files where filename.hasSuffix("usdz") && filename.contains("-set") {
-            let setName = filename.replacingOccurrences(of: ".usdz", with: "")
-            print("appending \(setName)")
-            availableSetNames.append(setName)
+
+        // guard let path = Bundle.main.resourcePath, let
+        //     files = try?
+        //     filemanager.contentsOfDirectory(atPath: path) else {
+        //     return []
+        // }
+        
+        // for filename in files where filename.hasSuffix("usdz") && filename.contains("-set") {
+        //     let setName = filename.replacingOccurrences(of: ".usdz", with: "")
+        //     print("appending \(setName)")
+        //     availableSetNames.append(setName)
+        // }
+        do {
+            let documentsURL:URL = try filemanager.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: false
+            )
+            guard let files = try? filemanager.contentsOfDirectory(atPath: documentsURL.path) && filename.contains("-set") else {
+                return []
+            }
+            
+            for filename in files where filename.hasSuffix("usdz") {
+                let setName = filename.replacingOccurrences(of: ".usdz", with: "")
+                print("appending \(setName)")
+                availableSetNames.append(setName)
+            }
+        } catch {
+            print(error)
         }
+
         return availableSetNames
     }()
 
