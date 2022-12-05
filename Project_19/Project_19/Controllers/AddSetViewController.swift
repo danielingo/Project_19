@@ -47,6 +47,7 @@ class AddSetViewController: UITableViewController {
                 ARViewVC.title = newTitle
                 print("IIIIIIIII")
             }
+//            performSegue(withIdentifier: "returntoSetList", sender: nil)
         }
         print("JJJJJJJJJ")
     }
@@ -54,6 +55,23 @@ class AddSetViewController: UITableViewController {
 }
 
 extension AddSetViewController {
+    
+//    @IBAction func importFromUserFiles(_ sender: Any) {
+//        let controller = UIDocumentPickerViewController(
+//            documentTypes: ["public.3d-content"], // only want user to select 3D models
+//            in: .import // mode is import file
+//        )
+//        controller.delegate = self
+//        if #available(iOS 11.0, *) {
+//            controller.allowsMultipleSelection = false
+//        }
+//    }
+    @IBAction func unwindFromARView(segue: UIStoryboardSegue) {
+        if let ARViewVC = segue.source as? ARViewController {
+            print(ARViewVC.title!)
+            self.dismiss(animated: false, completion: nil)
+        }
+    }
     
     @IBAction func unwindWithSelectedTag(segue: UIStoryboardSegue) {
         if let tagPickerViewController = segue.source as? TagPickerViewController,

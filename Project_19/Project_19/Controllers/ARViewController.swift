@@ -42,3 +42,9 @@ class ARViewController: UIViewController {
     }
     
 }
+
+extension ARViewController {
+    @IBAction func returnToParent(_ sender: Any) {
+        performSegue(withIdentifier: "returntoSetList", sender: nil)
+    }
+}

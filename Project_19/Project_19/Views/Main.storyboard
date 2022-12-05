@@ -88,12 +88,19 @@
                         <viewLayoutGuide key="safeArea" id="Tsm-z1-kKR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ikf-3h-meF"/>
+                    <navigationItem key="navigationItem" title="AR View" id="Ikf-3h-meF">
+                        <barButtonItem key="leftBarButtonItem" title="Return" image="chevron.backward" catalog="system" id="cAe-No-Xmd">
+                            <connections>
+                                <segue destination="pLT-od-cIj" kind="unwind" unwindAction="cancelToParentView:" id="FLE-hL-vuD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="arView" destination="Bd1-Vw-VCr" id="bME-Fm-ZEt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cO5-0z-ZKz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="pLT-od-cIj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="563" y="340"/>
         </scene>
@@ -247,7 +254,7 @@
                     <navigationItem key="navigationItem" title="Create Set" id="p0x-G4-Sqx">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="lrq-h0-dCH">
                             <connections>
-                                <segue destination="jK7-jE-EMi" kind="unwind" unwindAction="cancelToParentView:" id="YBc-qA-OKK"/>
+                                <segue destination="jK7-jE-EMi" kind="unwind" identifier="returntoSetList" unwindAction="cancelToParentView:" id="YBc-qA-OKK"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="fSb-4H-iYr">
@@ -334,6 +341,7 @@
         <segue reference="1w6-pq-OhH"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
